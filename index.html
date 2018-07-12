@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="芳华不老，华章日新">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Technical Doc">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Technical Doc">
+<meta property="og:description" content="芳华不老，华章日新">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Technical Doc">
+<meta name="twitter:description" content="芳华不老，华章日新">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Technical Doc</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Technical Doc</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/TechDocContext/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/shellScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/12/shellScript/" itemprop="url">shellScript</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T15:22:30+08:00">
+                2018-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ShellScript/" itemprop="url" rel="index">
+                    <span itemprop="name">ShellScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Shell 知识点汇总：</p>
+<p>1&gt; Shell脚本的第一句话，是注释，用于说明Bash的类型<br>                EXP：#!/bin/bash/</p>
+<p>2&gt; Shell中的特殊变量总结:</p>
+<p>Shell特殊变量：Shell $0, $#, $*, $@, $?, $$和命令行参数</p>
+<p>特殊变量列表:</p>
+<p>变量    含义<br>$0      当前脚本的文件名<br>$n      传递给脚本或函数的参数。n 是一个数字，表示第几个参数。例如，第一个参数是$1，第二个参数是$2。<br>$#      传递给脚本或函数的参数个数。<br>$<em>      传递给脚本或函数的所有参数。<br>$@      传递给脚本或函数的所有参数。被双引号(“ “)包含时，与 $</em> 稍有不同，下面将会讲到。<br>$?      上个命令的退出状态，或函数的返回值。一般情况下，大部分命令执行成功会返回 0，失败返回 1。<br>$$      当前Shell进程ID。对于 Shell 脚本，就是这些脚本所在的进程ID。</p>
+<p>$<em> 和 $@ 的区别:<br>$</em> 和 $@ 都表示传递给函数或脚本的所有参数，不被双引号(“ “)包含时，都以”$1” “$2” … “$n” 的形式输出所有参数。但是当它们被双引号(“ “)包含时，”$*” 会将所有的参数作为一个整体，以”$1 $2 … $n”的形式输出所有参数；”$@” 会将各个参数分开，以”$1” “$2” … “$n” 的形式输出所有参数。</p>
+<p><a href="http://blog.csdn.net/u011341352/article/details/53215180" target="_blank" rel="noopener">参考连接</a></p>
+<p>3&gt; Shell中的结构化命令:<br>   <1> if-then语句，若command的退出码为0（该命令成功运行）：<br>       基本命令：<br>           if command<br>           then<br>                   commands<br>           fi<br>       把then放到句尾，command后面带分号：<br>           if command; then<br>                   commands<br>           fi<br>       command可以使用双圆括号”(( ))”，双圆括号中可以使用高级数据表达式<br>       command可以使用双方括号”[[ ]]”，双方括号中提供了字符串比较的高级特性，模式匹配（bash shell支持，其余的shell不确定）</1></p>
+<p>   <2> test命令，若test命令中列出的条件成立，test命令就会退出并返回推出状态码0，分为三类：<br>       a&gt; 数值比较；<br>       b&gt; 字符串比较；<br>       c&gt; 文件比较；</2></p>
+<p>   <3> for命令：<br>       for var in list<br>       do<br>            commands<br>       done<br>       把do放到句尾，list后面带分号：<br>       if var in list; do<br>            commands<br>       done<br>       变量var包含当前列表中的当前值，list中提供迭代要用到的一系列值。</3></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/RISC-V/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/11/RISC-V/" itemprop="url">RISC-V</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T18:33:38+08:00">
+                2018-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RISC-V/" itemprop="url" rel="index">
+                    <span itemprop="name">RISC-V</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://blog.csdn.net/zoomdy/article/details/79580529" target="_blank" rel="noopener">大道至简——RISC-V架构之魂（上）</a><br><a href="https://blog.csdn.net/zoomdy/article/details/79580772" target="_blank" rel="noopener">大道至简——RISC-V架构之魂（中）</a><br><a href="https://blog.csdn.net/zoomdy/article/details/79580949" target="_blank" rel="noopener">大道至简——RISC-V架构之魂（下）</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/11/FreeRTOS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/11/FreeRTOS/" itemprop="url">FreeRTOS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T14:03:02+08:00">
+                2018-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FreeRTOS/" itemprop="url" rel="index">
+                    <span itemprop="name">FreeRTOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>FreeRTOS 是一个相对其他操作系統而言较小的操作系統。最小化的 FreeRTOS 核心仅包括 3 个 .c 文件(tasks.c、queue.c、list.c)和少数头文件，总共不到 9000 行代码，还包括了注释和空行。一个典型的编译后的 binary（二进制码）小于 10 KB。</p>
+<p>FreeRTOS 的代码可以分为三个主要模块：任务、通讯和硬件界面。</p>
+<p>FreeRTOS资料型态及命名规则<br>在不同硬件装置上，通讯端口设定上也不同，定义在portmacro.h头文件內，有两种特殊资料型态portTickType以及portBASE_TYPE。</p>
+<p>资料型态<br>portTickType : 用以储存tick的计数值，可以用来判断block次数<br>portBASE_TYPE : 定义为架构基础的变量，随各不同硬件来应用，如在32-bit架构上，其为32-bit型态，最常用以存储极限值或布尔数。<br>FreeRTOS明确的定义变量以及资料型态，不会有unsigned以及signed混合使用的情形发生。</p>
+<p>变量<br>char 类型：以 c 为字首<br>short 类型：以 s 为字首<br>long 类型：以 l 为字首<br>float 类型：以 f 为字首<br>double 类型：以 d 为字首<br>Enum 类型：以 e 为字首<br>portBASE_TYPE 或其他（如 struct）：以 x 为字首<br>pointer 有一个额外的字首 p , 例如 short 类型的 pointer 字首为 ps<br>unsigned 类型的变量有一个额外的字首 u , 例如 unsigned short 类型的变量字首为 us</p>
+<p>函数：以返回值型态与所在文件名称为开头(prefix)<br>vTaskPriority() 是 task.c 中返回值为 void 的函数<br>xQueueReceive() 是 queue.c 中返回值为 portBASE_TYPE 的函数<br>只能在该文件中使用的 (scope is limited in file) 函数，以 prv 为开头 (private)</p>
+<p>宏定义名称：宏定义在FreeRTOS里全部为大写字母定义，名称前小写字母为宏定义所在的文件名称<br>portMAX_DELAY : portable.h<br>configUSE_PREEMPTION : FreeRTOSConfig.h</p>
+<p>一般宏定义返回值pdTRUE 及 pdPASS为1 , pdFALSE 及 pdFAIL 为0。</p>
+<p><a href="http://wiki.csie.ncku.edu.tw/embedded/freertos#FreeRTOS%20%E6%9E%B6%E6%A7%8B" target="_blank" rel="noopener">参考链接:</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/09/ComputeArch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/09/ComputeArch/" itemprop="url">ComputeArch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-09T14:38:17+08:00">
+                2018-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Compute-Archtecture/" itemprop="url" rel="index">
+                    <span itemprop="name">Compute Archtecture</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>单功能流水线和多功能流水线;静态流水线和动态流水线；标量流水处理器和向量流水处理器；线性流水线和非线性流水线</p>
+<p>“指令级并行 ILP”的含义是：如果程序中相邻的一组指令是相互独立的，即不竞争同一个功能部件、不相互等待对方的运算结果、不访问同一个存储单元，那么它们就可以在处理器内部并行地执行。</p>
+<p>超标量（Superscalar）技术 和 超长指令字（Very Long Instruction Word, VLIW）技术是目前最基本的两类指令级并行技术。<br>前者的特点是采用普通的指令，设置多条并行工作的指令流水线；<br>后者的特点是：将若干条普通指令组装在一起，形成一条“超级指令”。这条“超级指令”包含多个不同操作码，这些操作码分别处理不同的操作数。对应这些操作码，一一对应地设置相应的功能部件。这样，只要取指令一次、分析指令一次，VLIW 技术就可以实现对多个不同的操作数，同时进行不同的处理/计算。</p>
+<p>Intel 公司的 Pentium 微处理器的实现采用了超标量技术，设置了两条相同的整数流水线（分别叫 U 流水线和 V 流水线）和一条浮点数流水线。浮点数流水线中又进一步采用多功能部件的思想，设置了加法器、乘法器和除法器。<br>目前，主流的微处理器都采用了超标量技术。</p>
+<p>1、标量处理器是一种最简单的计算机处理器类型。这类处理器在同一时间内只处理一条数据（整数或浮点数）。标量处理器是一种单指令流单数据流（SISD）处理器。</p>
+<p>2、超标量（superscalar）试图在一个周期取出多条指令并行执行，是通过内置多条流水线来同时执行多个处理，其实质是以空间换取时间。<br>早期的单发射结构微处理器的流水线设计目标是做到每个周期能平均执行一条指令 ,但这一目标不能满足处理器性能增长的要求,为了提高处理器的性能, 要求处理器具有每个周期能发射执行多条指令的能力 . 与超长指令字( VLIW , Very Long Instruction Word) 结构的数字信号处理器相似 ,超标量结构的处理器每个时钟周期也并行发射和执行多条指令 . 区别在于 ,VLIW的处理器采用静态调度, 而超标量结构的处理器采用动态指令调度 ,在指令执行时根据资源 、数据相关等情况 ,决定是否并行执行指令. 超标量结构是当代多发射微处理器所广泛采用的微体系结构 [1]<br>在超标量微处理器中 ,每个周期可同时发射执行多条指令, 但指令的高发射频率也意味着相关 [2]  所发生的频率也很高 ; 而且其结构决定了相关的复杂性 . 因此 ,相关的检测和解决策略的优劣将直接影响超标量处理器的性能 . 为了有效地处理相关, 需采用静态和动态调度技术相结合的方法 . 静态调度可在编译过程中减少相关的产生; 而动态调度可根据处理器的动态信息,发掘出更多的 ILP . 动态调度简化了编译器的设计 ,减小了编译代码对硬件的依赖, 但却是以大量的硬件开销为代价的.<br>在超标量处理器中, 指令的发射策略是指在指令的发射过程中, 所采取的相关检测方法和相关处理措施, 决定指令队列中指令的发射顺序, 其算法效率的优劣将直接影响超标量处理器的性能 . 设计高效的指令发射策略是实现高性能超标量处理器的前提. 在超标量处理器中 ,由于指令乱序执行 ,判断指令执行结束的条件更为复杂 , 因此设计超标量处理器时 ,应考虑采取一定的措施以实现精确中断</p>
+<p>RISC 芯片中通常集成了较多的功能部件，利用强大的编译系统使多个功能部件并行执行，并采用流水线 (pipeline) 、指令乱序 (out-order) 等设计使 CPU 的性能得以充分发挥。目前 RISC 芯片是高性能计算机的主流芯片。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/24/linux_HeadFile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/24/linux_HeadFile/" itemprop="url">linux HeadFile</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T11:34:22+08:00">
+                2018-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux-head-file/" itemprop="url" rel="index">
+                    <span itemprop="name">linux head file</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、stdint.h 说明：<br>   <a href="https://blog.csdn.net/yucan1001/article/details/7470905" target="_blank" rel="noopener">参考连接</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/vimEditor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/vimEditor/" itemprop="url">VIMEditor</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VIM-Editor/" itemprop="url" rel="index">
+                    <span itemprop="name">VIM Editor</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、VIM下自动补全变量名或函数名：ctrl + N/P；</p>
+<p>2、VIM下将自定义的变量类型高亮的方法：</p>
+<p>   vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax</p>
+<p>   可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；<br>   在该c.vim文件中增加：<br>   syn keyword cType u8 u16 u32 s8 s16 s32 bool_t<br>   (增加一个自定义变量，就在后面追加即可)<br>   注意：直接在~/.vimrc文件中增加“syn …”这句话，不可以;</p>
+<p>3、VIM下的替换操作：<br>a&gt; 文件内全部替换：<br>:%s#abc#def#g（用def替换文件中所有的abc）</p>
+<p>EXP：例如把一个文本文件里面的“linuxidc.com”全部替换成“linuxidc.net”：<br>     :%s#linuxidc.com#xwen.net#g (如文件内有#，可用/替换,比如:%s/linuxidc.com/xwen.net/g)</p>
+<p>b&gt; 文件内局部替换：<br>把10行到50行内的“abc”全部替换成“def”<br>:10,50s#abc#def#g（如文件内有#，可用/替换,:%s/abc/def/g）</p>
+<p>以上命令如果在g后面再加上c，则会在替换之前显示提示符给用户确认（conform）是否需要替换。 比如<br>:%s#linuxidc.com#linuxidc.net#gc</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/linuxCmd_find/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/linuxCmd_find/" itemprop="url">linuxCommand -- find</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">LinuxCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、which命令是在PATH变量指定的路径中搜索指定的系统命令的位置；</p>
+<p>2、whereis命令只能用于搜索二进制文件(-b)、源代码文件(-s)、说明文件(-m)。如果省略参数则返回所有的信息；</p>
+<p>3、find是最常用也是最强大的查找命令，它可以查找任何类型的文件。</p>
+<p>   find命令的一般格式为：find &lt;指定目录&gt;&lt;指定条件&gt;&lt;指定动作&gt;，即find pathname -options [-print -exec -ok]</p>
+<p>   EXP: find &lt;路径&gt; &lt;选项&gt; &lt;文件名&gt;</p>
+<p>参数解释：</p>
+<p>pathname：pathname为搜索的目录及其子目录，默认情况下为当前目录</p>
+<p>常用的option选项：</p>
+<p>   -name：按文件名来查找文件<br>   -iname: 不区分大小写</p>
+<p>   -user：按照文件的属主来查找文件</p>
+<p>   -group：按照文件所属的组来查找文件</p>
+<p>   -perm：按照文件权限来查找文件</p>
+<p>   -prune：不在当前指定目录中查找</p>
+<p>4、locate命令实际是”find -name”的另一种写法，但是查找方式跟find不同，它比find快得多。</p>
+<p>   因为它不搜索具体目录，而是在一个数据库(/var/lib/locatedb)中搜索指定的文件。</p>
+<p>   此数据库含有本地文件的所有信息，此数据库是linux系统自动创建的，数据库由updatedb程序来更新，</p>
+<p>   updatedb是由cron daemon周期性建立的，默认情况下为每天更新一次，所以用locate命令你搜索不到最新更新的文件，</p>
+<p>   除非你在用locate命令查找文件之前手动的用updatedb命令更新数据库。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/gitCommand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/19/gitCommand/" itemprop="url">gitCommand</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T18:21:33+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/gitCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">gitCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、git log</p>
+<p>   git log – filename &gt;&gt; 查看某个文件的所有改动的commit</p>
+<p>2、查看某个文件的某行代码的最后一次修改记录：</p>
+<p>   A&gt; 找到需要查看的代码的最后一次修改的Commit：<br>       git blame -L&lt;开始行号&gt;,+&lt;查看的行数&gt; path/file<br>   B&gt; 显示和上一次修改的差别：<br>       git show CommitID path/file</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/gdbCommand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/19/gdbCommand/" itemprop="url">gdbCommand</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T15:15:34+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GDBCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">GDBCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、和Thread相关的命令<br>   i threads —- 列出所有的thread线程号<br>   thread 2  —- 切换到线程2<br>   bt        —- 查看这个线程对应的调用栈<br>   l(L) func —- 在gdb中打印出某个function的codes<br>   p mutex_1 —- 查看该锁的状态</p>
+<p>2、gdb在断点下批处理命令：<br>   A&gt; set 断点<br>   B&gt; commands 断点号<br>              进入之后，顺序输入需要执行的命令,<br>      exp: p val_1<br>           bt<br>           ……<br>               end退出</p>
+<p>3、gdb中将需要的调试信息输出到文件（这种方式将gdb本身的info输出）<br>   (gdb) set logging file &lt;文件名&gt;<br>   (gdb) set logging on<br>   (gdb) thread apply all bt<br>   (gdb) set logging off<br>   (gdb) quit</p>
+<p>详细说明：<br>   1、(gdb) set logging file &lt;文件名&gt;<br>      设置输出的文件名称<br>   2、(gdb) set logging on<br>      输入这个命令后，此后的调试信息将输出到指定文件<br>   3、(gdb) thread apply all bt<br>      打印所有线程栈信息<br>   4、(gdb) set logging off<br>      输入这个命令，关闭到指定文件的输出</p>
+<p>   如果需要记录printf的输出数据，exp：r &gt; file.txt</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/linuxCmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/19/linuxCmd/" itemprop="url">linuxCommand</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T15:02:04+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">LinuxCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、man<br>    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。<br>    因此，有句话叫做，有问题找男人：）（man）<br>    exp：<br>        man open/man 2 open<br>    man man<br>    man fread</p>
+<pre><code>配合关键词搜索命令apropos，可以根据关键词搜索相应API， exp：
+    1、apropos timer；
+2、将上面搜出的函数，使用man查看函数的具体说明；
+</code></pre><p>2、linux下使用memleak工具来检查内存泄露<br>   valgrind工具也可以</p>
+<p>3、关闭进程命令<br>   ps -ef| grep “进程名称”<br>   kill -9 PID</p>
+<p>   exp:<br>   以下这条命令是检查java 进程是否存在：ps -ef |grep java<br>   字段含义如下：<br>   UID       PID       PPID      C     STIME    TTY       TIME         CMD<br>   zzw      14124     13991      0     00:38    pts/0     00:00:00     grep –color=auto dae</p>
+<h2 id="PPID-是父进程PID"><a href="#PPID-是父进程PID" class="headerlink" title="   PPID 是父进程PID"></a>   PPID 是父进程PID</h2><p>   U&lt;用户名称&gt;：列出属于该用户的程序的状况<br>   EXP: ps -U $USER</p>
+<p>4、几个统计磁盘空间的命令</p>
+<p>   module load ncdu<br>   ncdu –exclude=.snapshot</p>
+<p>   du –max-depth=1 只计算当前目录下的文件值</p>
+<p>   quota -s 磁盘配额命令，第一项带“**”说明user的配额已满</p>
+<p>5、mount<br>   mount命令用于加载文件系统到指定的加载点<br>   EXP: mount -t auto /dev/cdrom /mnt/cdrom //将cdrom设备挂载到mnt/cdrom文件夹下<br>   ll /mnt/cdrom                            //通过mnt/cdrom目录访问光驱内容</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">elfcandy</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/TechDocContext/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">elfcandy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
