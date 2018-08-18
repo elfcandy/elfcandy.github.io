@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="芳华不老，华章日新">
+<meta name="description" content="芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Technical Doc">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="芳华不老，华章日新">
+<meta property="og:description" content="芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Technical Doc">
-<meta name="twitter:description" content="芳华不老，华章日新">
+<meta name="twitter:description" content="芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越">
 
 
 
@@ -262,6 +262,762 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/linuxCmd_find/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/linuxCmd_find/" itemprop="url">linuxCommand -- find</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">LinuxCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、which命令是在PATH变量指定的路径中搜索指定的系统命令的位置；</p>
+<p>2、whereis命令只能用于搜索二进制文件(-b)、源代码文件(-s)、说明文件(-m)。如果省略参数则返回所有的信息；</p>
+<p>3、find是最常用也是最强大的查找命令，它可以查找任何类型的文件。</p>
+<p>   find命令的一般格式为：find &lt;指定目录&gt;&lt;指定条件&gt;&lt;指定动作&gt;，即find pathname -options [-print -exec -ok]</p>
+<p>   EXP: find &lt;路径&gt; &lt;选项&gt; &lt;文件名&gt;</p>
+<p>参数解释：</p>
+<p>pathname：pathname为搜索的目录及其子目录，默认情况下为当前目录</p>
+<p>常用的option选项：</p>
+<p>   -name：按文件名来查找文件<br>   -iname: 不区分大小写</p>
+<p>   -user：按照文件的属主来查找文件</p>
+<p>   -group：按照文件所属的组来查找文件</p>
+<p>   -perm：按照文件权限来查找文件</p>
+<p>   -prune：不在当前指定目录中查找</p>
+<p>4、locate命令实际是”find -name”的另一种写法，但是查找方式跟find不同，它比find快得多。</p>
+<p>   因为它不搜索具体目录，而是在一个数据库(/var/lib/locatedb)中搜索指定的文件。</p>
+<p>   此数据库含有本地文件的所有信息，此数据库是linux系统自动创建的，数据库由updatedb程序来更新，</p>
+<p>   updatedb是由cron daemon周期性建立的，默认情况下为每天更新一次，所以用locate命令你搜索不到最新更新的文件，</p>
+<p>   除非你在用locate命令查找文件之前手动的用updatedb命令更新数据库。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/vimEditor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/vimEditor/" itemprop="url">VIMEditor</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VIM-Editor/" itemprop="url" rel="index">
+                    <span itemprop="name">VIM Editor</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://wiki.csie.ncku.edu.tw/vim/vimrc" target="_blank" rel="noopener">关于VIM设置的参考链接</a></p>
+<p>1、VIM下自动补全变量名或函数名：ctrl + N/P；</p>
+<p>2、VIM下将自定义的变量类型高亮的方法：</p>
+<p>   vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax</p>
+<p>   可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；<br>   在该c.vim文件中增加：<br>   syn keyword cType u8 u16 u32 s8 s16 s32 bool_t<br>   (增加一个自定义变量，就在后面追加即可)<br>   注意：直接在~/.vimrc文件中增加“syn …”这句话，不可以;</p>
+<p>3、VIM下的替换操作：<br>a&gt; 文件内全部替换：<br>:%s#abc#def#g（用def替换文件中所有的abc）</p>
+<p>EXP：例如把一个文本文件里面的“linuxidc.com”全部替换成“linuxidc.net”：<br>     :%s#linuxidc.com#xwen.net#g (如文件内有#，可用/替换,比如:%s/linuxidc.com/xwen.net/g)</p>
+<p>b&gt; 文件内局部替换：<br>把10行到50行内的“abc”全部替换成“def”<br>:10,50s#abc#def#g（如文件内有#，可用/替换,:%s/abc/def/g）</p>
+<p>以上命令如果在g后面再加上c，则会在替换之前显示提示符给用户确认（conform）是否需要替换。 比如<br>:%s#linuxidc.com#linuxidc.net#gc</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/gitCommand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/19/gitCommand/" itemprop="url">gitCommand</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T18:21:33+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/gitCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">gitCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、git log</p>
+<p>   git log – filename &gt;&gt; 查看某个文件的所有改动的commit</p>
+<p>2、查看某个文件的某行代码的最后一次修改记录：</p>
+<p>   A&gt; 找到需要查看的代码的最后一次修改的Commit：<br>       git blame -L&lt;开始行号&gt;,+&lt;查看的行数&gt; path/file<br>   B&gt; 显示和上一次修改的差别：<br>       git show CommitID path/file</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/gdbCommand/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/19/gdbCommand/" itemprop="url">gdbCommand</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T15:15:34+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GDBCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">GDBCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://blog.csdn.net/yuyunliuhen/article/details/41673599" target="_blank" rel="noopener">参考链接</a></p>
+<p>1、gdb中attach的方法<br>   1&gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；<br>   2&gt; 启动gdb；<br>   3&gt; 在gdb命令行中，执行“attach PID”；</p>
+<p>2、和Thread相关的命令<br>   i threads —- 列出所有的thread线程号<br>   thread 2  —- 切换到线程2<br>   bt        —- 查看这个线程对应的调用栈<br>   l(L) func —- 在gdb中打印出某个function的codes<br>   p mutex_1 —- 查看该锁的状态</p>
+<p>3、gdb在断点下批处理命令：<br>   A&gt; set 断点<br>   B&gt; commands 断点号<br>              进入之后，顺序输入需要执行的命令,<br>      exp: p val_1<br>           bt<br>           ……<br>               end退出</p>
+<p>4、gdb中将需要的调试信息输出到文件（这种方式将gdb本身的info输出）<br>   (gdb) set logging file &lt;文件名&gt;<br>   (gdb) set logging on<br>   (gdb) thread apply all bt<br>   (gdb) set logging off<br>   (gdb) quit</p>
+<p>详细说明：<br>   1、(gdb) set logging file &lt;文件名&gt;<br>      设置输出的文件名称<br>   2、(gdb) set logging on<br>      输入这个命令后，此后的调试信息将输出到指定文件<br>   3、(gdb) thread apply all bt<br>      打印所有线程栈信息<br>   4、(gdb) set logging off<br>      输入这个命令，关闭到指定文件的输出</p>
+<p>   如果需要记录printf的输出数据，exp：r &gt; file.txt</p>
+<p>5、判断一个binary文件是否可以debug方法：<br>   objdump -t your-binary | grep debug<br>   如果可以debug，则会显示debug相关的一些信息，否则没有相关信息。</p>
+<p>6、gdb中设置环境变量：<br>   set  env LD_LIBRARY_PATH<br>   show ENV LD_LIBRARY_PATH<br>   show environment</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/linuxCmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/19/linuxCmd/" itemprop="url">linuxCommand</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T15:02:04+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">LinuxCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>1、man<br>    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。<br>    因此，有句话叫做，有问题找男人:)(man)<br>    EXP：<br>        man open/man 2 open<br>    man man<br>    man fread</p>
+<pre><code>配合关键词搜索命令apropos，可以根据关键词搜索相应API，
+EXP：
+    1、apropos timer；
+2、将上面搜出的函数，使用man查看函数的具体说明；
+</code></pre><p>2、ldd：列出动态库依赖关系。<br>        通过这命令可以检查程序使用的so库是否都已链接上。<br>    链接so库的动作在makefile文件链接时完成。<br>   <a href="https://blog.csdn.net/stpeace/article/details/47069215" target="_blank" rel="noopener">参考链接</a></p>
+<p>3、ulimit：主要是用来限制进程对资源的使用情况的，它支持各种类型的限制。<br>      -a 显示当前系统所有的limit资源信息。<br>      -c 最大的core文件的大小，以 blocks 为单位；<br>      Linux下产生CoreDump，需要通过ulimit命令检查core文件的设置；</p>
+<p>   <a href="https://blog.csdn.net/yuyunliuhen/article/details/41673599" target="_blank" rel="noopener">参考链接</a><br>   <a href="https://www.cnblogs.com/kongzhongqijing/p/5784293.html" target="_blank" rel="noopener">参考链接</a></p>
+<p>4、linux下使用memleak工具来检查内存泄露<br>   valgrind工具也可以</p>
+<p>5、关闭进程命令<br>   1) ps -ef| grep “进程名称”<br>      kill -9 PID</p>
+<pre><code>EXP:
+   以下这条命令是检查java 进程是否存在：ps -ef |grep java
+   字段含义如下：
+   UID       PID       PPID      C     STIME    TTY       TIME         CMD
+   zzw      14124     13991      0     00:38    pts/0     00:00:00     grep --color=auto dae
+   PPID 是父进程PID
+</code></pre><p>   2) -U &lt;用户名称&gt;：列出属于该用户的程序的状况<br>      EXP:<br>         ps -U $USER</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/19/linuxCmd/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/linuxPthreadAPI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -357,6 +1113,9 @@
 <p>1、prctl()函数：其中的一个用途，是为线程指定名字；<br>   <a href="https://blog.csdn.net/tmxkwzy/article/details/51919499" target="_blank" rel="noopener">参考链接-1</a><br>   <a href="https://blog.csdn.net/jasonchen_gbd/article/details/51308638" target="_blank" rel="noopener">参考链接-2</a></p>
 <p>2、int pthread_setspecific(pthread_key_t key, const void <em>value);<br>   void </em>pthread_getspecific(pthread_key_t key);<br>   函数 pthread_key_create() 用来创建线程私有数据;</p>
 <p>   <a href="https://blog.csdn.net/cywosp/article/details/26469435" target="_blank" rel="noopener">参考链接-1</a><br>   <a href="https://blog.csdn.net/mengxingyuanlove/article/details/50820386" target="_blank" rel="noopener">参考链接-2</a></p>
+<p>3、pthread_join()和pthread_detach()的区别<br>   linux的pthread有两种状态joinable状态和unjoinable状态。<br>   默认线程是joinable状态，当线程函数自己返回退出时或pthread_exit时都不会释放线程所占用堆栈和线程描述符（总计8K多）。<br>   只有当你调用了pthread_join之后这些资源才会被释放。<br>   unjoinable属性可以在pthread_create时指定，或在线程创建后在线程中pthread_detach自己。</p>
+<p>   但是pthread_join(pthread_id)函数是阻塞函数，在调用pthread_join(pthread_id)后，如果该线程没有运行结束，调用者会被阻塞。<br>   在有些情况下我们并不希望如此，<br>   比如在Web服务器中当主线程为每个新来的链接创建一个子线程进行处理的时候，<br>   主线程并不希望因为调用pthread_join而阻塞（因为还要继续处理之后到来的链接），<br>   这时可以在子线程中加入代码：<br>       pthread_detach(pthread_self())<br>   或者父线程调用：<br>       pthread_detach(thread_id)（非阻塞，可立即返回）<br>   这将该子线程的状态设置为detached,则该线程运行结束后会自动释放所有资源。</p>
+<p>4、线程池<br>   基本思路，起几个线程，死循环不退出(比如用一个boolean变量控制)，<br>             将等待被执行函数写在一个queue中。<br>         线程中用函数指针的方式，将从queue中pop出的函数执行。<br>         反复循环，降低了线程创建和销毁的时间。<br>   <a href="https://www.cnblogs.com/venow/archive/2012/11/22/2779667.html#3974204" target="_blank" rel="noopener">参考链接</a></p>
 
           
         
@@ -499,7 +1258,7 @@
             <p>#建站过程</p>
 <p>关键点有几个：</p>
 <p>1、需要工具：GitBash/Node.js/Typora</p>
-<p>2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。<br><a href="https://blog.csdn.net/Greenovia/article/details/60576985" target="_blank" rel="noopener">参考链接</a></p>
+<p>2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。<br>   <a href="https://blog.csdn.net/Greenovia/article/details/60576985" target="_blank" rel="noopener">参考链接 1</a><br>   <a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">参考链接 2</a></p>
 <p>3、github支持的个人主页格式必须为：<username>.github.io，因此github上的仓库必须以此命名。</username></p>
 <p>4、在“分类”中按分类显示各项内容的方法：</p>
 <pre><code>A&gt; 执行：hexo new &apos;文章名称&apos;，在./source/_post/目录下会看见“文章名称.md”；
@@ -508,12 +1267,16 @@
 B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会看见一个新的文件夹，
      以“目录名称”命名；文件夹下有文件index.md，打开该文件，在开头添加
      “ type: &quot;categories&quot; ”；
-</code></pre><p><a href="https://segmentfault.com/q/1010000002561642/" target="_blank" rel="noopener">参考链接</a></p>
-<pre><code>C&gt; 生成的new page，需要将theme/next/_config.yml中的category项目中冒号后面
+    [参考链接](https://segmentfault.com/q/1010000002561642/)
+
+C&gt; 生成的new page，需要将theme/next/_config.yml中的category项目中冒号后面
    内容改为：categories: new page 名称；
-</code></pre><p><a href="https://segmentfault.com/q/1010000000618915/" target="_blank" rel="noopener">参考链接</a><br>       对站点_config.yml和主题文件夹下_config.yml中的category的关系讲的比较清楚;</p>
-<pre><code>BTW：百度搜索 “Hexo主题中实现多级分类”
-</code></pre>
+       [参考链接](https://segmentfault.com/q/1010000000618915/)
+
+       对站点_config.yml和主题文件夹下_config.yml中的category的关系讲的比较清楚;
+   BTW：百度搜索 “Hexo主题中实现多级分类”
+</code></pre><p>5、md文件基本语法<br>   <a href="http://www.mamicode.com/info-detail-2050387.html" target="_blank" rel="noopener">参考链接</a></p>
+
           
         
       
@@ -716,7 +1479,7 @@ B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会�
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">elfcandy</p>
-              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -726,7 +1489,7 @@ B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -737,7 +1500,7 @@ B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会�
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

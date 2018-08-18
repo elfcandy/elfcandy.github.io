@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人：）（man）    exp：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， exp：     1、apropos timer； 2、将上面搜出的函数，">
+<meta name="description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人:)(man)    EXP：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， EXP：     1、apropos timer； 2、将上面搜出的函数，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linuxCommand">
 <meta property="og:url" content="http://yoursite.com/2018/04/19/linuxCmd/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人：）（man）    exp：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， exp：     1、apropos timer； 2、将上面搜出的函数，">
+<meta property="og:description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人:)(man)    EXP：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， EXP：     1、apropos timer； 2、将上面搜出的函数，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-12T15:46:54.389Z">
+<meta property="og:updated_time" content="2018-08-18T14:15:05.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linuxCommand">
-<meta name="twitter:description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人：）（man）    exp：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， exp：     1、apropos timer； 2、将上面搜出的函数，">
+<meta name="twitter:description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人:)(man)    EXP：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， EXP：     1、apropos timer； 2、将上面搜出的函数，">
 
 
 
@@ -349,19 +349,37 @@
       
 
       
-        <p>1、man<br>    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。<br>    因此，有句话叫做，有问题找男人：）（man）<br>    exp：<br>        man open/man 2 open<br>    man man<br>    man fread</p>
-<pre><code>配合关键词搜索命令apropos，可以根据关键词搜索相应API， exp：
+        <p>1、man<br>    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。<br>    因此，有句话叫做，有问题找男人:)(man)<br>    EXP：<br>        man open/man 2 open<br>    man man<br>    man fread</p>
+<pre><code>配合关键词搜索命令apropos，可以根据关键词搜索相应API，
+EXP：
     1、apropos timer；
 2、将上面搜出的函数，使用man查看函数的具体说明；
-</code></pre><p>2、linux下使用memleak工具来检查内存泄露<br>   valgrind工具也可以</p>
-<p>3、关闭进程命令<br>   ps -ef| grep “进程名称”<br>   kill -9 PID</p>
-<p>   exp:<br>   以下这条命令是检查java 进程是否存在：ps -ef |grep java<br>   字段含义如下：<br>   UID       PID       PPID      C     STIME    TTY       TIME         CMD<br>   zzw      14124     13991      0     00:38    pts/0     00:00:00     grep –color=auto dae</p>
-<h2 id="PPID-是父进程PID"><a href="#PPID-是父进程PID" class="headerlink" title="   PPID 是父进程PID"></a>   PPID 是父进程PID</h2><p>   U&lt;用户名称&gt;：列出属于该用户的程序的状况<br>   EXP: ps -U $USER</p>
-<p>4、几个统计磁盘空间的命令</p>
+</code></pre><p>2、ldd：列出动态库依赖关系。<br>        通过这命令可以检查程序使用的so库是否都已链接上。<br>    链接so库的动作在makefile文件链接时完成。<br>   <a href="https://blog.csdn.net/stpeace/article/details/47069215" target="_blank" rel="noopener">参考链接</a></p>
+<p>3、ulimit：主要是用来限制进程对资源的使用情况的，它支持各种类型的限制。<br>      -a 显示当前系统所有的limit资源信息。<br>      -c 最大的core文件的大小，以 blocks 为单位；<br>      Linux下产生CoreDump，需要通过ulimit命令检查core文件的设置；</p>
+<p>   <a href="https://blog.csdn.net/yuyunliuhen/article/details/41673599" target="_blank" rel="noopener">参考链接</a><br>   <a href="https://www.cnblogs.com/kongzhongqijing/p/5784293.html" target="_blank" rel="noopener">参考链接</a></p>
+<p>4、linux下使用memleak工具来检查内存泄露<br>   valgrind工具也可以</p>
+<p>5、关闭进程命令<br>   1) ps -ef| grep “进程名称”<br>      kill -9 PID</p>
+<pre><code>EXP:
+   以下这条命令是检查java 进程是否存在：ps -ef |grep java
+   字段含义如下：
+   UID       PID       PPID      C     STIME    TTY       TIME         CMD
+   zzw      14124     13991      0     00:38    pts/0     00:00:00     grep --color=auto dae
+   PPID 是父进程PID
+</code></pre><p>   2) -U &lt;用户名称&gt;：列出属于该用户的程序的状况<br>      EXP:<br>         ps -U $USER</p>
+<a id="more"></a>
+<p>6、几个统计磁盘空间的命令</p>
 <p>   module load ncdu<br>   ncdu –exclude=.snapshot</p>
-<p>   du –max-depth=1 只计算当前目录下的文件值</p>
+<p>   du –max-depth=1 ~/xxx/ 只计算当前目录下的文件值</p>
 <p>   quota -s 磁盘配额命令，第一项带“**”说明user的配额已满</p>
-<p>5、mount<br>   mount命令用于加载文件系统到指定的加载点<br>   EXP: mount -t auto /dev/cdrom /mnt/cdrom //将cdrom设备挂载到mnt/cdrom文件夹下<br>   ll /mnt/cdrom                            //通过mnt/cdrom目录访问光驱内容</p>
+<p>7、mount<br>   mount命令用于加载文件系统到指定的加载点<br>   EXP:<br>      mount -t auto /dev/cdrom /mnt/cdrom  //将cdrom设备挂载到mnt/cdrom文件夹下<br>      ll /mnt/cdrom                        //通过mnt/cdrom目录访问光驱内容</p>
+<p>8、type / command<br>   使用type/command可以检查当前命令属于内部命令还是外部命令，以及该命令的路径。</p>
+<p>   type -a 命令名<br>   command -V 命令名</p>
+<blockquote>
+<p>EXP1：type -a cd<br>EXP2: type -a cd uname : ls uname<br>Output:<br>     cd is a shell builtin<br>     uname is /usr/bin/uname<br>     uname is /bin/uname<br>     uname is /usr/bin/uname<br>     : is a shell builtin<br>     ls is aliased to `ls -F –color=auto –show-control-chars’<br>     ls is /usr/bin/ls<br>     ls is /bin/ls<br>     ls is /usr/bin/ls<br>     uname is /usr/bin/uname<br>     uname is /bin/uname<br>     uname is /usr/bin/uname</p>
+</blockquote>
+<p>9、sudo<br>   sudo命令用来以其他身份来执行命令，预设的身份为root。<br>   在/etc/sudoers中设置了可执行sudo指令的用户。<br>   <a href="http://man.linuxde.net/sudo" target="_blank" rel="noopener">参考链接</a></p>
+<p>10、source<br>   source命令也称为“点命令”，也就是一个点符号（.）,是bash的内部命令。<br>   功能：使Shell读入指定的Shell程序文件并依次执行文件中的所有语句</p>
+<p>11、cat<br>   cat命令连接文件并打印到标准输出设备上，cat经常用来显示文件的内容。<br>   文件过大时，可增加管道命令more或less。<br>   -n 对输出的文件增加行号。</p>
 
       
     </div>
@@ -446,22 +464,13 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">elfcandy</p>
-              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -471,7 +480,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -482,7 +491,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -507,22 +516,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PPID-是父进程PID"><span class="nav-number">1.</span> <span class="nav-text">   PPID 是父进程PID</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

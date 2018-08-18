@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查看这个线程对应的调用栈   l(L) func —- 在gdb中打印出某个function的codes   p mutex_1 —- 查看该锁的状态 2、gdb在断点下批处理命令：   A&amp;gt; set 断点   B&amp;gt; com">
+<meta name="description" content="参考链接 1、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；   2&amp;gt; 启动gdb；   3&amp;gt; 在gdb命令行中，执行“attach PID”； 2、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gdbCommand">
 <meta property="og:url" content="http://yoursite.com/2018/04/19/gdbCommand/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="1、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查看这个线程对应的调用栈   l(L) func —- 在gdb中打印出某个function的codes   p mutex_1 —- 查看该锁的状态 2、gdb在断点下批处理命令：   A&amp;gt; set 断点   B&amp;gt; com">
+<meta property="og:description" content="参考链接 1、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；   2&amp;gt; 启动gdb；   3&amp;gt; 在gdb命令行中，执行“attach PID”； 2、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-12T15:46:54.387Z">
+<meta property="og:updated_time" content="2018-08-18T14:15:05.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gdbCommand">
-<meta name="twitter:description" content="1、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查看这个线程对应的调用栈   l(L) func —- 在gdb中打印出某个function的codes   p mutex_1 —- 查看该锁的状态 2、gdb在断点下批处理命令：   A&amp;gt; set 断点   B&amp;gt; com">
+<meta name="twitter:description" content="参考链接 1、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；   2&amp;gt; 启动gdb；   3&amp;gt; 在gdb命令行中，执行“attach PID”； 2、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查">
 
 
 
@@ -349,11 +349,15 @@
       
 
       
-        <p>1、和Thread相关的命令<br>   i threads —- 列出所有的thread线程号<br>   thread 2  —- 切换到线程2<br>   bt        —- 查看这个线程对应的调用栈<br>   l(L) func —- 在gdb中打印出某个function的codes<br>   p mutex_1 —- 查看该锁的状态</p>
-<p>2、gdb在断点下批处理命令：<br>   A&gt; set 断点<br>   B&gt; commands 断点号<br>              进入之后，顺序输入需要执行的命令,<br>      exp: p val_1<br>           bt<br>           ……<br>               end退出</p>
-<p>3、gdb中将需要的调试信息输出到文件（这种方式将gdb本身的info输出）<br>   (gdb) set logging file &lt;文件名&gt;<br>   (gdb) set logging on<br>   (gdb) thread apply all bt<br>   (gdb) set logging off<br>   (gdb) quit</p>
+        <p><a href="https://blog.csdn.net/yuyunliuhen/article/details/41673599" target="_blank" rel="noopener">参考链接</a></p>
+<p>1、gdb中attach的方法<br>   1&gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；<br>   2&gt; 启动gdb；<br>   3&gt; 在gdb命令行中，执行“attach PID”；</p>
+<p>2、和Thread相关的命令<br>   i threads —- 列出所有的thread线程号<br>   thread 2  —- 切换到线程2<br>   bt        —- 查看这个线程对应的调用栈<br>   l(L) func —- 在gdb中打印出某个function的codes<br>   p mutex_1 —- 查看该锁的状态</p>
+<p>3、gdb在断点下批处理命令：<br>   A&gt; set 断点<br>   B&gt; commands 断点号<br>              进入之后，顺序输入需要执行的命令,<br>      exp: p val_1<br>           bt<br>           ……<br>               end退出</p>
+<p>4、gdb中将需要的调试信息输出到文件（这种方式将gdb本身的info输出）<br>   (gdb) set logging file &lt;文件名&gt;<br>   (gdb) set logging on<br>   (gdb) thread apply all bt<br>   (gdb) set logging off<br>   (gdb) quit</p>
 <p>详细说明：<br>   1、(gdb) set logging file &lt;文件名&gt;<br>      设置输出的文件名称<br>   2、(gdb) set logging on<br>      输入这个命令后，此后的调试信息将输出到指定文件<br>   3、(gdb) thread apply all bt<br>      打印所有线程栈信息<br>   4、(gdb) set logging off<br>      输入这个命令，关闭到指定文件的输出</p>
 <p>   如果需要记录printf的输出数据，exp：r &gt; file.txt</p>
+<p>5、判断一个binary文件是否可以debug方法：<br>   objdump -t your-binary | grep debug<br>   如果可以debug，则会显示debug相关的一些信息，否则没有相关信息。</p>
+<p>6、gdb中设置环境变量：<br>   set  env LD_LIBRARY_PATH<br>   show ENV LD_LIBRARY_PATH<br>   show environment</p>
 
       
     </div>
@@ -444,7 +448,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">elfcandy</p>
-              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -454,7 +458,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -465,7 +469,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

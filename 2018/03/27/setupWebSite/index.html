@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="#建站过程 关键点有几个： 1、需要工具：GitBash/Node.js/Typora 2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。参考链接 3、github支持的个人主页格式必须为：.github.io，因此github上的仓库必">
+<meta name="description" content="#建站过程 关键点有几个： 1、需要工具：GitBash/Node.js/Typora 2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。   参考链接 1   参考链接 2 3、github支持的个人主页格式必须为：.github.io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="setupWebSite">
 <meta property="og:url" content="http://yoursite.com/2018/03/27/setupWebSite/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="#建站过程 关键点有几个： 1、需要工具：GitBash/Node.js/Typora 2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。参考链接 3、github支持的个人主页格式必须为：.github.io，因此github上的仓库必">
+<meta property="og:description" content="#建站过程 关键点有几个： 1、需要工具：GitBash/Node.js/Typora 2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。   参考链接 1   参考链接 2 3、github支持的个人主页格式必须为：.github.io">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-12T16:38:14.104Z">
+<meta property="og:updated_time" content="2018-08-18T14:15:05.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="setupWebSite">
-<meta name="twitter:description" content="#建站过程 关键点有几个： 1、需要工具：GitBash/Node.js/Typora 2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。参考链接 3、github支持的个人主页格式必须为：.github.io，因此github上的仓库必">
+<meta name="twitter:description" content="#建站过程 关键点有几个： 1、需要工具：GitBash/Node.js/Typora 2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。   参考链接 1   参考链接 2 3、github支持的个人主页格式必须为：.github.io">
 
 
 
@@ -352,7 +352,7 @@
         <p>#建站过程</p>
 <p>关键点有几个：</p>
 <p>1、需要工具：GitBash/Node.js/Typora</p>
-<p>2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。<br><a href="https://blog.csdn.net/Greenovia/article/details/60576985" target="_blank" rel="noopener">参考链接</a></p>
+<p>2、将我的github上的blog仓库，clone到本地，首先使用npm install，之后hexo的原始文件需要通过hexo g命令来生成静态网页，之后可以使用hexo d将生成好的页面发送到github上。<br>   <a href="https://blog.csdn.net/Greenovia/article/details/60576985" target="_blank" rel="noopener">参考链接 1</a><br>   <a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">参考链接 2</a></p>
 <p>3、github支持的个人主页格式必须为：<username>.github.io，因此github上的仓库必须以此命名。</username></p>
 <p>4、在“分类”中按分类显示各项内容的方法：</p>
 <pre><code>A&gt; 执行：hexo new &apos;文章名称&apos;，在./source/_post/目录下会看见“文章名称.md”；
@@ -361,12 +361,16 @@
 B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会看见一个新的文件夹，
      以“目录名称”命名；文件夹下有文件index.md，打开该文件，在开头添加
      “ type: &quot;categories&quot; ”；
-</code></pre><p><a href="https://segmentfault.com/q/1010000002561642/" target="_blank" rel="noopener">参考链接</a></p>
-<pre><code>C&gt; 生成的new page，需要将theme/next/_config.yml中的category项目中冒号后面
+    [参考链接](https://segmentfault.com/q/1010000002561642/)
+
+C&gt; 生成的new page，需要将theme/next/_config.yml中的category项目中冒号后面
    内容改为：categories: new page 名称；
-</code></pre><p><a href="https://segmentfault.com/q/1010000000618915/" target="_blank" rel="noopener">参考链接</a><br>       对站点_config.yml和主题文件夹下_config.yml中的category的关系讲的比较清楚;</p>
-<pre><code>BTW：百度搜索 “Hexo主题中实现多级分类”
-</code></pre>
+       [参考链接](https://segmentfault.com/q/1010000000618915/)
+
+       对站点_config.yml和主题文件夹下_config.yml中的category的关系讲的比较清楚;
+   BTW：百度搜索 “Hexo主题中实现多级分类”
+</code></pre><p>5、md文件基本语法<br>   <a href="http://www.mamicode.com/info-detail-2050387.html" target="_blank" rel="noopener">参考链接</a></p>
+
       
     </div>
     
@@ -456,7 +460,7 @@ B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会�
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">elfcandy</p>
-              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -466,7 +470,7 @@ B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -477,7 +481,7 @@ B&gt; 执行：hexo new page &apos;目录名称&apos;，在/source/目录下会�
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

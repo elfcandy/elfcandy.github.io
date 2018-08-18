@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="linux下两种module的概念不同： 1&amp;gt; linux的module概念：   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linuxCmd -- Module">
+<meta property="og:url" content="http://yoursite.com/2018/08/07/linuxCmd-Module/index.html">
+<meta property="og:site_name" content="Technical Doc">
+<meta property="og:description" content="linux下两种module的概念不同： 1&amp;gt; linux的module概念：   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-18T14:15:05.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linuxCmd -- Module">
+<meta name="twitter:description" content="linux下两种module的概念不同： 1&amp;gt; linux的module概念：   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/07/linuxCmd-Module/"/>
+
+
+
+
+
+  <title>linuxCmd -- Module | Technical Doc</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Technical Doc</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/TechDocContext/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/linuxCmd-Module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">linuxCmd -- Module</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T18:01:06+08:00">
+                2018-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">LinuxCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>linux下两种module的概念不同：</p>
+<p>1&gt; linux的module概念：<br>   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。<br>   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。<br>   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中，这样的话，我们就不需要模块了，但是这样通常是有特殊的用途(所有要运行的进程都预先知道的情况)。<br>   模块另一个优点是内核可以动态的加载、卸载它们（或者自动地由kerneld守护程序完成）。</p>
+<p>   可以具体在看。</p>
+<p>2&gt; Environment Modules软件包以模块为单位，为用户动态设置Linux或UNIX的环境变量的软件。<br>   模块的概念，“应用名”和“应用的版本”的二元组，即一个模块对应的是一个特定版本的应用。<br>   Environment Modules软件包独立于具体使用的Shell，支持多种主流的Shell。</p>
+<p>   在linux服务器上，有时需要安装同一个软件的不同版本，按照需要调用。比如，g03和g09。<br>   不幸的是，它们的环境变量会互相冲突，不能共存，鱼和熊掌只能选择选择其一。<br>   这个问题在大型超算服务器上更为严重。很多软件依赖的环境变量、动态库各不相同。<br>   环境变量模块化工具modules，它的功能很简单，将每个软件的环境变量写一个模块文件modulefile，需调用哪个软件就加载其环境变量模块，执行完成后卸载模块，与之相关的环境变量全部消除。这个神奇的工具是个开源软件。<br>   目前，在大型超算服务器上，PBS+modules已经成为标配。</p>
+<p>   <a href="http://modules.sourceforge.net/" target="_blank" rel="noopener">软件主页:</a></p>
+<p>   常用命令：<br>    [module] / [module help] / [module -h] —— 查看帮助<br>    [module avail] —— 查看可用模块<br>    [module list] —— 查看已经加载的模块<br>    [module add &lt;模块名&gt;] / [module load &lt;模块名&gt;] —— 加载模块<br>    [module rm &lt;模块名&gt;] / [module unload &lt;模块名&gt;] —— 卸载模块<br>    [module purge] —— 卸载所有模块<br>    [module switch &lt;旧模块&gt; &lt;新模块&gt;] / [module swap &lt;旧模块&gt; &lt;新模块&gt;] —— 替换模块<br>    [module whatis &lt;模块名&gt;] —— 查看模块说明<br>    [module show &lt;模块名&gt;] / [module display &lt;模块名&gt;] —— 查看模块内容<br>    [module use -a &lt;路径&gt;] / [module use –append &lt;路径&gt;] —— 将指定路径追加到MODULEPATH中</p>
+<p>问题分析：<br>    使用module load加载新的module之后，<br>    报错：<br>    ModuleCmd_List.c(146):FATAL:996: The environment variables LOADMODULES and <em>LMFILES</em> have inconsistent lengths.<br>    处理的方法，先清理全部的module，再加载：<br>        1、module purge<br>        2、module load &lt;模块名&gt;<br>   <a href="https://sourceforge.net/p/modules/mailman/message/33625046/" target="_blank" rel="noopener">参考处理方式:</a><br>   <a href="https://sourceforge.net/p/modules/mailman/modules-interest/thread/4E3307BC.5040609@tu-dortmund.de/" target="_blank" rel="noopener">参考链接:</a><br>   <a href="https://sourceforge.net/p/modules/mailman/message/27610504/" target="_blank" rel="noopener">参考链接:</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/18/Python/" rel="next" title="Python">
+                <i class="fa fa-chevron-left"></i> Python
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/10/Makefile/" rel="prev" title="makefile">
+                makefile <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">elfcandy</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/TechDocContext/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">elfcandy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
