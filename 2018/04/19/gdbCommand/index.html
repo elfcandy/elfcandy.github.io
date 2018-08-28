@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="参考链接 1、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；   2&amp;gt; 启动gdb；   3&amp;gt; 在gdb命令行中，执行“attach PID”； 2、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查">
+<meta name="description" content="参考链接 1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；   参考链接   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致； 2、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gdbCommand">
 <meta property="og:url" content="http://yoursite.com/2018/04/19/gdbCommand/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="参考链接 1、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；   2&amp;gt; 启动gdb；   3&amp;gt; 在gdb命令行中，执行“attach PID”； 2、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查">
+<meta property="og:description" content="参考链接 1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；   参考链接   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致； 2、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-18T14:15:05.665Z">
+<meta property="og:updated_time" content="2018-08-28T16:11:05.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gdbCommand">
-<meta name="twitter:description" content="参考链接 1、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；   2&amp;gt; 启动gdb；   3&amp;gt; 在gdb命令行中，执行“attach PID”； 2、和Thread相关的命令   i threads —- 列出所有的thread线程号   thread 2  —- 切换到线程2   bt        —- 查">
+<meta name="twitter:description" content="参考链接 1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；   参考链接   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致； 2、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个">
 
 
 
@@ -350,14 +350,22 @@
 
       
         <p><a href="https://blog.csdn.net/yuyunliuhen/article/details/41673599" target="_blank" rel="noopener">参考链接</a></p>
-<p>1、gdb中attach的方法<br>   1&gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；<br>   2&gt; 启动gdb；<br>   3&gt; 在gdb命令行中，执行“attach PID”；</p>
-<p>2、和Thread相关的命令<br>   i threads —- 列出所有的thread线程号<br>   thread 2  —- 切换到线程2<br>   bt        —- 查看这个线程对应的调用栈<br>   l(L) func —- 在gdb中打印出某个function的codes<br>   p mutex_1 —- 查看该锁的状态</p>
-<p>3、gdb在断点下批处理命令：<br>   A&gt; set 断点<br>   B&gt; commands 断点号<br>              进入之后，顺序输入需要执行的命令,<br>      exp: p val_1<br>           bt<br>           ……<br>               end退出</p>
-<p>4、gdb中将需要的调试信息输出到文件（这种方式将gdb本身的info输出）<br>   (gdb) set logging file &lt;文件名&gt;<br>   (gdb) set logging on<br>   (gdb) thread apply all bt<br>   (gdb) set logging off<br>   (gdb) quit</p>
+<p>1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；<br>   <a href="http://blog.sina.com.cn/s/blog_80ce3a550101m3l5.html" target="_blank" rel="noopener">参考链接</a><br>   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致；</p>
+<p>2、gdb中attach的方法<br>   1&gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个字段)；<br>   2&gt; 启动gdb；<br>   3&gt; 在gdb命令行中，执行“attach PID”；</p>
+<p>3、和Thread相关的命令</p>
+<blockquote>
+<p>i threads —- 列出所有的thread线程号<br>thread 2  —- 切换到线程2<br>bt        —- 查看这个线程对应的调用栈<br>l(L) func —- 在gdb中打印出某个function的codes<br>p mutex_1 —- 查看该锁的状态</p>
+</blockquote>
+<p>4、gdb在断点下批处理命令：<br>   A&gt; set 断点<br>   B&gt; commands 断点号<br>              进入之后，顺序输入需要执行的命令,<br>      exp: p val_1<br>           bt<br>           ……<br>               end退出</p>
+<p>5、gdb中将需要的调试信息输出到文件（这种方式将gdb本身的info输出）<br>   (gdb) set logging file &lt;文件名&gt;<br>   (gdb) set logging on<br>   (gdb) thread apply all bt<br>   (gdb) set logging off<br>   (gdb) quit</p>
 <p>详细说明：<br>   1、(gdb) set logging file &lt;文件名&gt;<br>      设置输出的文件名称<br>   2、(gdb) set logging on<br>      输入这个命令后，此后的调试信息将输出到指定文件<br>   3、(gdb) thread apply all bt<br>      打印所有线程栈信息<br>   4、(gdb) set logging off<br>      输入这个命令，关闭到指定文件的输出</p>
 <p>   如果需要记录printf的输出数据，exp：r &gt; file.txt</p>
-<p>5、判断一个binary文件是否可以debug方法：<br>   objdump -t your-binary | grep debug<br>   如果可以debug，则会显示debug相关的一些信息，否则没有相关信息。</p>
-<p>6、gdb中设置环境变量：<br>   set  env LD_LIBRARY_PATH<br>   show ENV LD_LIBRARY_PATH<br>   show environment</p>
+<p>6、判断一个binary文件是否可以debug方法：<br>   objdump -t your-binary | grep debug<br>   如果可以debug，则会显示debug相关的一些信息，否则没有相关信息。</p>
+<p>7、gdb中设置环境变量：</p>
+<blockquote>
+<p>set  env LD_LIBRARY_PATH<br>show ENV LD_LIBRARY_PATH<br>show environment</p>
+</blockquote>
+<p>8、solib-absolute-prefix和solib-search-path<br>   solib-absolute-prefix设置的是被搜索文件路径的前缀，solib-absolute-prefix的值只能有一个；<br>   solib-search-path设置的是被搜索文件的路径，solib-search-path可以有多个路径，中间按用:隔开；<br>   EXP：<br>   (gdb) info sharedlibrary                    //gdb下查看shared library方法<br>   (gdb) set solib-search-path .               //假设当前目录下有文件libshared.so, 可以执行下面的命令：<br>   (gdb) set solib-absolute-prefix /media/DATA //假设文件libc.so.6在/media/DATA/lib/libc.so.6下，gdb用前缀/media/DATA + /lib/libc.so.6,就找到了文件</p>
 
       
     </div>
@@ -448,7 +456,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">elfcandy</p>
-              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越 / 与时俱进 洗心革面 高瞻远瞩</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -458,7 +466,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -469,7 +477,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

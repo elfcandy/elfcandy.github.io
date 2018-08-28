@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1&amp;gt; Python调试方法：    启动：python -m pdb filename.py [argument1…，argument2…]    (pdb)下： &amp;gt; help：显示所有pdb调试命令  &amp;gt; 断点相关：   &amp;gt;&amp;gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点   &amp;gt;&amp;gt; b：后">
+<meta name="description" content="GCC工具链包括GCC、Binutils、C运行库等。 1、BinUtils一组二进制程序处理工具，包括：addr2line、ar、objcopy、objdump、as、ld、ldd、readelf、size等命令。  addr2line：用来将程序地址转换成其所对应的程序源文件及所对应的代码行，也可以得到所对应的函数；                该工具将帮助调试器在调试的过程中定位对应的源代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python">
-<meta property="og:url" content="http://yoursite.com/2018/07/18/Python/index.html">
+<meta property="og:title" content="gccCompilerLinker">
+<meta property="og:url" content="http://yoursite.com/2018/08/24/gccCompilerLinker/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="1&amp;gt; Python调试方法：    启动：python -m pdb filename.py [argument1…，argument2…]    (pdb)下： &amp;gt; help：显示所有pdb调试命令  &amp;gt; 断点相关：   &amp;gt;&amp;gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点   &amp;gt;&amp;gt; b：后">
+<meta property="og:description" content="GCC工具链包括GCC、Binutils、C运行库等。 1、BinUtils一组二进制程序处理工具，包括：addr2line、ar、objcopy、objdump、as、ld、ldd、readelf、size等命令。  addr2line：用来将程序地址转换成其所对应的程序源文件及所对应的代码行，也可以得到所对应的函数；                该工具将帮助调试器在调试的过程中定位对应的源代">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T16:11:05.514Z">
+<meta property="og:updated_time" content="2018-08-28T16:11:05.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python">
-<meta name="twitter:description" content="1&amp;gt; Python调试方法：    启动：python -m pdb filename.py [argument1…，argument2…]    (pdb)下： &amp;gt; help：显示所有pdb调试命令  &amp;gt; 断点相关：   &amp;gt;&amp;gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点   &amp;gt;&amp;gt; b：后">
+<meta name="twitter:title" content="gccCompilerLinker">
+<meta name="twitter:description" content="GCC工具链包括GCC、Binutils、C运行库等。 1、BinUtils一组二进制程序处理工具，包括：addr2line、ar、objcopy、objdump、as、ld、ldd、readelf、size等命令。  addr2line：用来将程序地址转换成其所对应的程序源文件及所对应的代码行，也可以得到所对应的函数；                该工具将帮助调试器在调试的过程中定位对应的源代">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/18/Python/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/24/gccCompilerLinker/"/>
 
 
 
 
 
-  <title>Python | Technical Doc</title>
+  <title>gccCompilerLinker | Technical Doc</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/Python/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/24/gccCompilerLinker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="elfcandy">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python</h1>
+          <h1 class="post-title" itemprop="name headline">gccCompilerLinker</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T14:18:24+08:00">
-                2018-07-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-24T11:17:02+08:00">
+                2018-08-24
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/gccCompilerLinker/" itemprop="url" rel="index">
+                    <span itemprop="name">gccCompilerLinker</span>
                   </a>
                 </span>
 
@@ -349,30 +349,24 @@
       
 
       
-        <p>1&gt; Python调试方法：</p>
-<p>   启动：python -m pdb filename.py [argument1…，argument2…]</p>
-<p>   (pdb)下：</p>
-<pre><code>&gt; help：显示所有pdb调试命令
+        <p>GCC工具链包括GCC、Binutils、C运行库等。</p>
+<p>1、BinUtils一组二进制程序处理工具，包括：addr2line、ar、objcopy、objdump、as、ld、ldd、readelf、size等命令。</p>
+<blockquote>
+<p>addr2line：用来将程序地址转换成其所对应的程序源文件及所对应的代码行，也可以得到所对应的函数；<br>                该工具将帮助调试器在调试的过程中定位对应的源代码位置；<br>as：主要用于汇编；<br>ld：主要用于链接；<br>ar：主要用于创建静态库。linux静态库.a为后缀，动态库.so为后缀；windows静态库.lib为后缀，动态库.dll为后缀；<br>ldd：用于查看一个可执行程序所依赖的共享库；<br>objcopy：将一种对象文件翻译成另一种格式，例如将.bin转换成.elf，或者将.elf转换成.bin;<br>objdump：主要用于反汇编；<br>readelf：显示有关elf文件的信息；<br>size：列出可执行文件每个部分的尺寸和总尺寸，代码段，数据段，总大小等；</p>
+</blockquote>
+<p>2、C运行库<br>   C语言标准主要有两部分组成：1)描述C语言的语法；2)描述C语言的标准库；<br>   其中，C标准库定义了一组标准头文件，但是C语言标准仅仅定义了C标准库函数原型，并没有提供实现。因此，C语言编<br>   译器通常需要一个C运行时库(C Run Time Library, CRT，又称为C运行库)的支持。同时，C++也有自己的运行时库。</p>
+<p>3、编译过程<br>   1&gt; 预处理<br>      GCC的-E选项使gcc在执行完预处理后停止；<br>      EXP：gcc -E hello.c -o hello.i</p>
+<p>   2&gt; 编译<br>      GCC的-S选项使gcc在执行完编译后停止，生成汇编代码；<br>      EXP：gcc -S hello.i -o hello.s</p>
+<p>   3&gt; 汇编<br>      对汇编代码处理，生成处理器可以识别的指令，保存在.o后缀的目标文件中；<br>      通过调用Binutils中的汇编器as，根据汇编指令和处理器指令的对照表一一翻译即可；<br>      使用gcc的-c选项，或者Binutils中的as，将hello.s文件汇编生成目标文件hello.o；<br>      EXP 1：gcc -c hello.s -o hello.o<br>      EXP 2：as -c hello.s -o hello.o<br>      注意：hello.o目标文件为ELF(Executable and Linkable Format)格式的可重定向文件。</p>
+<p>   4&gt; 链接<br>      可分为静态链接和动态链接。<br>      在Linux系统中，<br>      &gt; gcc编译链接时的动态链接库搜索路径的顺序为：先从gcc -L指定的路径寻找；再从环境变量<br>        LIBRARY_PATH指定的路径寻找；再从默认路径/lib、/usr/lib、/usr/local/lib寻找；<br>      &gt; 执行二进制文件时的动态库搜索路径的顺序为：先从编译目标代码时，指定的动态库路径寻找；<br>        再从环境变量LD_LIBRARY_PATH指定的路径寻找；再从配置文件/etc/ld.so.conf中指定的动态<br>    库路径中寻找；再从默认路径/lib、/usr/lib寻找；<br>      &gt; ldd命令可以查看一个可执行程序所依赖的共享库；<br>      &gt; 如果在同一个路径中存在同名的静态库文件和动态库文件，例如libtest.a和libtest.so，gcc<br>        默认优先选择动态库；若要让gcc选择链接libtest.a，可以通过指定gcc -static选项，强制使<br>    用静态库进行链接；</p>
+<p>4、ELF文件分析<br>   1&gt; elf文件包含的段：.text/<br>                       .rodata/<br>                       .data(已初始化的全局和静态变量)/<br>               .bss(未初始化的全局和静态变量)/<br>               .debug(调试符号表)<br>      readelf -S 可查看其各个section的信息<br>   2&gt; 反汇编ELF<br>      objdump -D：可以对elf文件进行反汇编；<br>      objdump -S：可以对elf文件进行反汇编，并且将其C语言源代码混合显示出来；</p>
+<p>5、查看一个elf文件所用的gcc版本的几种方式</p>
+<blockquote>
+<h1 id="readelf-wi-a-out-grep-GNU-优先选项，最为准确"><a href="#readelf-wi-a-out-grep-GNU-优先选项，最为准确" class="headerlink" title="readelf -wi a.out | grep GNU (优先选项，最为准确)"></a>readelf -wi a.out | grep GNU (优先选项，最为准确)</h1></blockquote>
+<blockquote>
+<h1 id="strings-a-a-out-grep-gcc-大写GCC结果不同"><a href="#strings-a-a-out-grep-gcc-大写GCC结果不同" class="headerlink" title="strings -a a.out | grep gcc(大写GCC结果不同)"></a>strings -a a.out | grep gcc(大写GCC结果不同)</h1><h1 id="readelf-p-comment-a-out"><a href="#readelf-p-comment-a-out" class="headerlink" title="readelf -p .comment a.out"></a>readelf -p .comment a.out</h1><h1 id="objdump-s-–section-comment-a-out"><a href="#objdump-s-–section-comment-a-out" class="headerlink" title="objdump -s –section .comment a.out"></a>objdump -s –section .comment a.out</h1><p>   <a href="https://stackoverflow.com/questions/2387040/how-to-retrieve-the-gcc-version-used-to-compile-a-given-elf-executable" target="_blank" rel="noopener">参考链接</a><br>   根据该链接描述，只能显示elf文件的运行时gcc版本号，而不能显示编译时的gcc版本号；</p>
+</blockquote>
 
-&gt; 断点相关：
-  &gt;&gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点
-  &gt;&gt; b：后无参数，显示所有断点
-  &gt;&gt; cl breakpointNum：删除指定断点
-
-&gt; 程序运行相关：
-      &gt;&gt; continue或c：继续执行程序
-      &gt;&gt; step或s：    进入函数
-      &gt;&gt; return或r：  执行代码直到从当前函数返回
-      &gt;&gt; next或n：    执行下一行
-
-&gt; bt：显示当前的函数调用栈顺序
-
-&gt; pp：打印变量的值
-
-&gt; list或l：查看当前行的代码段
-
-&gt; quit/exit：退出当前调试过程
-</code></pre>
       
     </div>
     
@@ -396,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/12/shellScript/" rel="next" title="shellScript">
-                <i class="fa fa-chevron-left"></i> shellScript
+              <a href="/2018/08/15/Abbreviation/" rel="next" title="Abbreviation">
+                <i class="fa fa-chevron-left"></i> Abbreviation
               </a>
             
           </div>
@@ -405,10 +399,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/07/linuxCmd_Module/" rel="prev" title="linuxCmd -- Module">
-                linuxCmd -- Module <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -456,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,6 +507,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#readelf-wi-a-out-grep-GNU-优先选项，最为准确"><span class="nav-number">1.</span> <span class="nav-text">readelf -wi a.out | grep GNU (优先选项，最为准确)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#strings-a-a-out-grep-gcc-大写GCC结果不同"><span class="nav-number">2.</span> <span class="nav-text">strings -a a.out | grep gcc(大写GCC结果不同)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#readelf-p-comment-a-out"><span class="nav-number">3.</span> <span class="nav-text">readelf -p .comment a.out</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#objdump-s-–section-comment-a-out"><span class="nav-number">4.</span> <span class="nav-text">objdump -s –section .comment a.out</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

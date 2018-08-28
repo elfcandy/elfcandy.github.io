@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1&amp;gt; Python调试方法：    启动：python -m pdb filename.py [argument1…，argument2…]    (pdb)下： &amp;gt; help：显示所有pdb调试命令  &amp;gt; 断点相关：   &amp;gt;&amp;gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点   &amp;gt;&amp;gt; b：后">
+<meta name="description" content="linux下两种module的概念不同： 1&amp;gt; linux的module概念：   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python">
-<meta property="og:url" content="http://yoursite.com/2018/07/18/Python/index.html">
+<meta property="og:title" content="linuxCmd -- Module">
+<meta property="og:url" content="http://yoursite.com/2018/08/07/linuxCmd_Module/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="1&amp;gt; Python调试方法：    启动：python -m pdb filename.py [argument1…，argument2…]    (pdb)下： &amp;gt; help：显示所有pdb调试命令  &amp;gt; 断点相关：   &amp;gt;&amp;gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点   &amp;gt;&amp;gt; b：后">
+<meta property="og:description" content="linux下两种module的概念不同： 1&amp;gt; linux的module概念：   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T16:11:05.514Z">
+<meta property="og:updated_time" content="2018-08-28T16:11:05.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python">
-<meta name="twitter:description" content="1&amp;gt; Python调试方法：    启动：python -m pdb filename.py [argument1…，argument2…]    (pdb)下： &amp;gt; help：显示所有pdb调试命令  &amp;gt; 断点相关：   &amp;gt;&amp;gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点   &amp;gt;&amp;gt; b：后">
+<meta name="twitter:title" content="linuxCmd -- Module">
+<meta name="twitter:description" content="linux下两种module的概念不同： 1&amp;gt; linux的module概念：   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/18/Python/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/07/linuxCmd_Module/"/>
 
 
 
 
 
-  <title>Python | Technical Doc</title>
+  <title>linuxCmd -- Module | Technical Doc</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/Python/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/linuxCmd_Module/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="elfcandy">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python</h1>
+          <h1 class="post-title" itemprop="name headline">linuxCmd -- Module</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T14:18:24+08:00">
-                2018-07-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-07T18:01:06+08:00">
+                2018-08-07
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">LinuxCommand</span>
                   </a>
                 </span>
 
@@ -349,30 +349,15 @@
       
 
       
-        <p>1&gt; Python调试方法：</p>
-<p>   启动：python -m pdb filename.py [argument1…，argument2…]</p>
-<p>   (pdb)下：</p>
-<pre><code>&gt; help：显示所有pdb调试命令
+        <p>linux下两种module的概念不同：</p>
+<p>1&gt; linux的module概念：<br>   linux 2.0版本以后都支持模块化，因为内核中的一部分常驻在内存中（如最常使用的进程，如scheduler等），但是其它的进程只是在需要的时候才被载入。<br>   如MS-DOS文件系统只有当mount此类系统的时候才需要，这种按需加载，就是模块。<br>   它能使内核保持较小的体积，虽然可以把所有的东东都放在内核中，这样的话，我们就不需要模块了，但是这样通常是有特殊的用途(所有要运行的进程都预先知道的情况)。<br>   模块另一个优点是内核可以动态的加载、卸载它们（或者自动地由kerneld守护程序完成）。</p>
+<p>   可以具体在看。</p>
+<p>2&gt; Environment Modules软件包以模块为单位，为用户动态设置Linux或UNIX的环境变量的软件。<br>   模块的概念，“应用名”和“应用的版本”的二元组，即一个模块对应的是一个特定版本的应用。<br>   Environment Modules软件包独立于具体使用的Shell，支持多种主流的Shell。</p>
+<p>   在linux服务器上，有时需要安装同一个软件的不同版本，按照需要调用。比如，g03和g09。<br>   不幸的是，它们的环境变量会互相冲突，不能共存，鱼和熊掌只能选择选择其一。<br>   这个问题在大型超算服务器上更为严重。很多软件依赖的环境变量、动态库各不相同。<br>   环境变量模块化工具modules，它的功能很简单，将每个软件的环境变量写一个模块文件modulefile，需调用哪个软件就加载其环境变量模块，执行完成后卸载模块，与之相关的环境变量全部消除。这个神奇的工具是个开源软件。<br>   目前，在大型超算服务器上，PBS+modules已经成为标配。</p>
+<p>   <a href="http://modules.sourceforge.net/" target="_blank" rel="noopener">软件主页:</a></p>
+<p>   常用命令：<br>    [module] / [module help] / [module -h] —— 查看帮助<br>    [module avail] —— 查看可用模块<br>    [module list] —— 查看已经加载的模块<br>    [module add &lt;模块名&gt;] / [module load &lt;模块名&gt;] —— 加载模块<br>    [module rm &lt;模块名&gt;] / [module unload &lt;模块名&gt;] —— 卸载模块<br>    [module purge] —— 卸载所有模块<br>    [module switch &lt;旧模块&gt; &lt;新模块&gt;] / [module swap &lt;旧模块&gt; &lt;新模块&gt;] —— 替换模块<br>    [module whatis &lt;模块名&gt;] —— 查看模块说明<br>    [module show &lt;模块名&gt;] / [module display &lt;模块名&gt;] —— 查看模块内容<br>    [module use -a &lt;路径&gt;] / [module use –append &lt;路径&gt;] —— 将指定路径追加到MODULEPATH中</p>
+<p>问题分析：<br>    使用module load加载新的module之后，<br>    报错：<br>    ModuleCmd_List.c(146):FATAL:996: The environment variables LOADMODULES and <em>LMFILES</em> have inconsistent lengths.<br>    处理的方法，先清理全部的module，再加载：<br>        1、module purge<br>        2、module load &lt;模块名&gt;<br>   <a href="https://sourceforge.net/p/modules/mailman/message/33625046/" target="_blank" rel="noopener">参考处理方式:</a><br>   <a href="https://sourceforge.net/p/modules/mailman/modules-interest/thread/4E3307BC.5040609@tu-dortmund.de/" target="_blank" rel="noopener">参考链接:</a><br>   <a href="https://sourceforge.net/p/modules/mailman/message/27610504/" target="_blank" rel="noopener">参考链接:</a></p>
 
-&gt; 断点相关：
-  &gt;&gt; b ([file:]lineno | function) [, condition]：根据行号或文件名插入断点
-  &gt;&gt; b：后无参数，显示所有断点
-  &gt;&gt; cl breakpointNum：删除指定断点
-
-&gt; 程序运行相关：
-      &gt;&gt; continue或c：继续执行程序
-      &gt;&gt; step或s：    进入函数
-      &gt;&gt; return或r：  执行代码直到从当前函数返回
-      &gt;&gt; next或n：    执行下一行
-
-&gt; bt：显示当前的函数调用栈顺序
-
-&gt; pp：打印变量的值
-
-&gt; list或l：查看当前行的代码段
-
-&gt; quit/exit：退出当前调试过程
-</code></pre>
       
     </div>
     
@@ -396,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/12/shellScript/" rel="next" title="shellScript">
-                <i class="fa fa-chevron-left"></i> shellScript
+              <a href="/2018/07/18/Python/" rel="next" title="Python">
+                <i class="fa fa-chevron-left"></i> Python
               </a>
             
           </div>
@@ -406,8 +391,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/07/linuxCmd_Module/" rel="prev" title="linuxCmd -- Module">
-                linuxCmd -- Module <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/10/Makefile/" rel="prev" title="makefile">
+                makefile <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Technical Doc">
 <meta property="og:description" content="参考链接 1参考链接 2 1、Makefie &amp;gt;&amp;amp; log.txt 保存输出信息 2、make -p 列出所有的Makefile内置变量的当前值。   注意：该命令会先执行make。然后再执行-p输出当前Makefile的所有内置变量的值。 3、3个内置函数说明：   A&amp;gt; wildcard : 扩展通配符   B&amp;gt; notdir   ：去除路径   C&amp;gt; pats">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-18T14:15:05.655Z">
+<meta property="og:updated_time" content="2018-08-28T16:11:05.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="makefile">
 <meta name="twitter:description" content="参考链接 1参考链接 2 1、Makefie &amp;gt;&amp;amp; log.txt 保存输出信息 2、make -p 列出所有的Makefile内置变量的当前值。   注意：该命令会先执行make。然后再执行-p输出当前Makefile的所有内置变量的值。 3、3个内置函数说明：   A&amp;gt; wildcard : 扩展通配符   B&amp;gt; notdir   ：去除路径   C&amp;gt; pats">
@@ -369,6 +369,29 @@
 <p>   只要make看到一个[.o]文件，它就会自动的把[.c]文件加在依赖关系中。<br>   如果make找到一个whatever.o，那么whatever.c，就会是whatever.o的依赖文件。并且 cc -c whatever.c 也会被推导出来。</p>
 <p>7、CFLAGS是makefile中的隐式规则里会用到的常见预定义变量，是C编译器的选项。<br>   注意是隐式规则！！编译时会自动加上，相当于：<br>   gcc -c a.c -o a.o，相当于<br>   gcc $(CFLAGS) -c a.c -o a.o</p>
 <p>8、MakeFile常见预定义变量<br>   AR：库文件维护程序的名称，默认值为ar<br>   AS：汇编程序的名称，默认值为as<br>   CC：C编译器名称，默认值为cc<br>   CPP：C预编译器的名称，默认值为$(CC) -E<br>   CXX: C++编译器名称，默认值为g++<br>   RM：文件删除程序的名称，默认值为rm -f<br>   ARFLAGS：库文件维护程序的选项，无默认值<br>   ASFLAGS：汇编程序的选项，无默认值<br>   CFLAGS：C编译器的选项，无默认值<br>   CPPFLAGS：C预编译器的选项，无默认值<br>   CXXFLAGS：C++编译器的选项，无默认值</p>
+<p>9、在Makefile文件中打印字符串的方法</p>
+<blockquote>
+<p>有两类命令可以打印字符串：</p>
+<blockquote>
+<p>第一类：</p>
+<blockquote>
+<p>$(info $(TARGET_DEVICE))<br>$(warning “here add the debug info”)<br>$(error “error: this will stop the compile”) //error会停止当前makefile的编译</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>&gt;&gt; 第二类：
+&gt;&gt;&gt; @echo &quot;The compiler name is \&quot;${Name}\&quot;;&quot;
+&gt;&gt;&gt; @echo $(Name)
+</code></pre><blockquote>
+<p>以上命两类命令的前面需要有TAB键；<br>第二类命令需要放置在“目标:依赖”下，才能被执行；第一类不需要；</p>
+</blockquote>
+<p>10、@放在行首，通常用在“规则”行中，表示不显示命令本身，而只显示它的结果；</p>
+<p>11、$@、$^、$&lt;三个符号的含义：</p>
+<blockquote>
+<p>$@：代表目标文件(target)<br>$^：代表所有的依赖文件(components)<br>$&lt;：代表第一个依赖文件(components中最左边的那个)</p>
+</blockquote>
+<p>   makefile的基本规则为：<br>       目标:依赖</p>
+<p>12、产生镜像文件<br>   基本的实现方法是：注意Wl逗号后面跟着需要传递的参数，逗号后面不能存在空格，否则出现错误。<br>   gcc -Wl,-Map=file.map file.c -o target</p>
 
       
     </div>
@@ -393,7 +416,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/07/linuxCmd-Module/" rel="next" title="linuxCmd -- Module">
+              <a href="/2018/08/07/linuxCmd_Module/" rel="next" title="linuxCmd -- Module">
                 <i class="fa fa-chevron-left"></i> linuxCmd -- Module
               </a>
             
@@ -459,7 +482,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">elfcandy</p>
-              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越 / 与时俱进 洗心革面 高瞻远瞩</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -469,7 +492,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -480,7 +503,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

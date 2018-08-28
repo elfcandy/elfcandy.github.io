@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Technical Doc">
 <meta property="og:description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人:)(man)    EXP：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， EXP：     1、apropos timer； 2、将上面搜出的函数，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-18T14:15:05.675Z">
+<meta property="og:updated_time" content="2018-08-28T16:11:05.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linuxCommand">
 <meta name="twitter:description" content="1、man    man命令可以在线的显示出所有Linux所支持的API函数的详细说明。    因此，有句话叫做，有问题找男人:)(man)    EXP：        man open/man 2 open    man man    man fread 配合关键词搜索命令apropos，可以根据关键词搜索相应API， EXP：     1、apropos timer； 2、将上面搜出的函数，">
@@ -379,7 +379,10 @@ EXP：
 </blockquote>
 <p>9、sudo<br>   sudo命令用来以其他身份来执行命令，预设的身份为root。<br>   在/etc/sudoers中设置了可执行sudo指令的用户。<br>   <a href="http://man.linuxde.net/sudo" target="_blank" rel="noopener">参考链接</a></p>
 <p>10、source<br>   source命令也称为“点命令”，也就是一个点符号（.）,是bash的内部命令。<br>   功能：使Shell读入指定的Shell程序文件并依次执行文件中的所有语句</p>
-<p>11、cat<br>   cat命令连接文件并打印到标准输出设备上，cat经常用来显示文件的内容。<br>   文件过大时，可增加管道命令more或less。<br>   -n 对输出的文件增加行号。</p>
+<p>11、几种将文件输出到终端的方法<br>   1&gt; sed -n “开始行，结束行p” 文件名<br>      表示查看文件的开始行到结束行的内容；</p>
+<p>   2&gt; cat<br>      cat命令连接文件并打印到标准输出设备上，cat经常用来显示文件的内容。<br>      文件过大时，可增加管道命令more或less。<br>      -n 对输出的文件增加行号。</p>
+<p>   3&gt; head<br>      head -n 行号 文件名<br>      表示查看文件前几行的内容；</p>
+<p>   4&gt; tail<br>   将某个档案文件的最后几行显示到终端上，假设该档案有更新，tail会自己主动刷新，确保你看到最新的档案内容。<br>   参数举例：<br>    -f 该参数用于监视File文件增长<br>    -c Number 从 Number “字节”位置读取指定文件<br>    -n Number 输出文件尾部的N行内容，其中：<br>       -n +数字 文件名：表示查看文件的某一行到最后一行<br>       -n -数字 文件名：表示查看文件的最后几行<br>   EXP：<br>        A&gt; tail -f filename<br>           监视filename文件的尾部内容（默认10行，相当于增加参数 -n 10），刷新显示在屏幕上。退出，按下CTRL+C<br>        B&gt; tail -n +20 filename<br>           显示filename的20行到最后一行<br>        C&gt; tail -n -20 filename<br>           显示filename的最后20行<br>   相关命令：<br>        &gt; tac 从最后一行开始显示档案内容；<br>        &gt; more 分页显示档案内容。less 与 more 相似，但支持向前翻页；<br>        &gt; head 仅仅显示前面几行；</p>
 
       
     </div>
@@ -470,7 +473,7 @@ EXP：
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">elfcandy</p>
-              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越</p>
+              <p class="site-description motion-element" itemprop="description">芳华不老，华章日新 / 人生的价值在不断的追求之中。追求自然的和谐，追求身心的完美，追求思想的超越 / 与时俱进 洗心革面 高瞻远瞩</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -480,7 +483,7 @@ EXP：
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -491,7 +494,7 @@ EXP：
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
