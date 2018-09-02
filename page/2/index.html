@@ -404,6 +404,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/vimEditor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/vimEditor/" itemprop="url">VIMEditor</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VIM-Editor/" itemprop="url" rel="index">
+                    <span itemprop="name">VIM Editor</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://wiki.csie.ncku.edu.tw/vim/vimrc" target="_blank" rel="noopener">关于VIM设置的参考链接</a></p>
+<p><a href="https://github.com/yangyangwithgnu/use_vim_as_ide" target="_blank" rel="noopener">github模板</a></p>
+<p>1、VIM下自动补全变量名或函数名：ctrl + N/P；</p>
+<p>2、VIM下将自定义的变量类型高亮的方法：</p>
+<p>   vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax</p>
+<p>   可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；<br>   在该c.vim文件中增加：<br>   syn keyword cType u8 u16 u32 s8 s16 s32 bool_t<br>   (增加一个自定义变量，就在后面追加即可)<br>   注意：直接在~/.vimrc文件中增加“syn …”这句话，不可以;</p>
+<p>3、VIM下的替换操作：</p>
+<blockquote>
+<p>文件内全部替换：<br>     :%s#abc#def#g（用def替换文件中所有的abc）</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>EXP：把一个文本文件里面的“linuxidc.com”全部替换成“linuxidc.net”：<br>     :%s#linuxidc.com#xwen.net#g (如文件内有#，可用/替换,比如:%s/linuxidc.com/xwen.net/g)</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>文件内局部替换：</p>
+<blockquote>
+<p> 把10行到50行内的“abc”全部替换成“def”<br> :10,50s#abc#def#g（如文件内有#，可用/替换,:%s/abc/def/g）</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>以上命令如果在g后面再加上c，则会在替换之前显示提示符给用户确认（conform）是否需要替换。 比如<br>  :%s#linuxidc.com#linuxidc.net#gc</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/linuxCmd_find/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -513,154 +676,6 @@
 <p>   此数据库含有本地文件的所有信息，此数据库是linux系统自动创建的，数据库由updatedb程序来更新，</p>
 <p>   updatedb是由cron daemon周期性建立的，默认情况下为每天更新一次，所以用locate命令你搜索不到最新更新的文件，</p>
 <p>   除非你在用locate命令查找文件之前手动的用updatedb命令更新数据库。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/vimEditor/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="elfcandy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Technical Doc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/23/vimEditor/" itemprop="url">VIMEditor</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
-                2018-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VIM-Editor/" itemprop="url" rel="index">
-                    <span itemprop="name">VIM Editor</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://wiki.csie.ncku.edu.tw/vim/vimrc" target="_blank" rel="noopener">关于VIM设置的参考链接</a></p>
-<p>1、VIM下自动补全变量名或函数名：ctrl + N/P；</p>
-<p>2、VIM下将自定义的变量类型高亮的方法：</p>
-<p>   vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax</p>
-<p>   可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；<br>   在该c.vim文件中增加：<br>   syn keyword cType u8 u16 u32 s8 s16 s32 bool_t<br>   (增加一个自定义变量，就在后面追加即可)<br>   注意：直接在~/.vimrc文件中增加“syn …”这句话，不可以;</p>
-<p>3、VIM下的替换操作：<br>a&gt; 文件内全部替换：<br>:%s#abc#def#g（用def替换文件中所有的abc）</p>
-<p>EXP：例如把一个文本文件里面的“linuxidc.com”全部替换成“linuxidc.net”：<br>     :%s#linuxidc.com#xwen.net#g (如文件内有#，可用/替换,比如:%s/linuxidc.com/xwen.net/g)</p>
-<p>b&gt; 文件内局部替换：<br>把10行到50行内的“abc”全部替换成“def”<br>:10,50s#abc#def#g（如文件内有#，可用/替换,:%s/abc/def/g）</p>
-<p>以上命令如果在g后面再加上c，则会在替换之前显示提示符给用户确认（conform）是否需要替换。 比如<br>:%s#linuxidc.com#linuxidc.net#gc</p>
 
           
         
@@ -960,7 +975,14 @@
 <p>set  env LD_LIBRARY_PATH<br>show ENV LD_LIBRARY_PATH<br>show environment</p>
 </blockquote>
 <p>8、solib-absolute-prefix和solib-search-path<br>   solib-absolute-prefix设置的是被搜索文件路径的前缀，solib-absolute-prefix的值只能有一个；<br>   solib-search-path设置的是被搜索文件的路径，solib-search-path可以有多个路径，中间按用:隔开；<br>   EXP：<br>   (gdb) info sharedlibrary                    //gdb下查看shared library方法<br>   (gdb) set solib-search-path .               //假设当前目录下有文件libshared.so, 可以执行下面的命令：<br>   (gdb) set solib-absolute-prefix /media/DATA //假设文件libc.so.6在/media/DATA/lib/libc.so.6下，gdb用前缀/media/DATA + /lib/libc.so.6,就找到了文件</p>
-
+<p>9、临时改变变量的值：set i=3</p>
+<p>10、查看类的结构：ptype node</p>
+<p>11、打印其他格式的值：<br>    p/x i    //打印hex<br>    p/c i    //打印字符<br>    p/s i    //打印字符串<br>    p/f i    //打印float</p>
+<p>12、查看当前stack中的变量：info local</p>
+<p>13、保存已设置的断点<br>    &gt; 在gdb中，可以使用如下命令将设置的断点保存下来：<br>    &gt; (gdb) save breakpoints save-file-name</p>
+<pre><code>&gt; 下次调试时，可以使用如下命令批量设置保存的断点：
+&gt; (gdb) source save-file-name
+</code></pre>
           
         
       

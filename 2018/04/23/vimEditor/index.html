@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="关于VIM设置的参考链接 1、VIM下自动补全变量名或函数名：ctrl + N/P； 2、VIM下将自定义的变量类型高亮的方法：    vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax    可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；   在该c.vim文件中增加：   syn keyword cType u8 u1">
+<meta name="description" content="关于VIM设置的参考链接 github模板 1、VIM下自动补全变量名或函数名：ctrl + N/P； 2、VIM下将自定义的变量类型高亮的方法：    vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax    可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；   在该c.vim文件中增加：   syn keyword cT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VIMEditor">
 <meta property="og:url" content="http://yoursite.com/2018/04/23/vimEditor/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="关于VIM设置的参考链接 1、VIM下自动补全变量名或函数名：ctrl + N/P； 2、VIM下将自定义的变量类型高亮的方法：    vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax    可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；   在该c.vim文件中增加：   syn keyword cType u8 u1">
+<meta property="og:description" content="关于VIM设置的参考链接 github模板 1、VIM下自动补全变量名或函数名：ctrl + N/P； 2、VIM下将自定义的变量类型高亮的方法：    vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax    可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；   在该c.vim文件中增加：   syn keyword cT">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-18T14:15:05.695Z">
+<meta property="og:updated_time" content="2018-09-02T12:29:54.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VIMEditor">
-<meta name="twitter:description" content="关于VIM设置的参考链接 1、VIM下自动补全变量名或函数名：ctrl + N/P； 2、VIM下将自定义的变量类型高亮的方法：    vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax    可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；   在该c.vim文件中增加：   syn keyword cType u8 u1">
+<meta name="twitter:description" content="关于VIM设置的参考链接 github模板 1、VIM下自动补全变量名或函数名：ctrl + N/P； 2、VIM下将自定义的变量类型高亮的方法：    vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax    可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；   在该c.vim文件中增加：   syn keyword cT">
 
 
 
@@ -350,14 +350,29 @@
 
       
         <p><a href="http://wiki.csie.ncku.edu.tw/vim/vimrc" target="_blank" rel="noopener">关于VIM设置的参考链接</a></p>
+<p><a href="https://github.com/yangyangwithgnu/use_vim_as_ide" target="_blank" rel="noopener">github模板</a></p>
 <p>1、VIM下自动补全变量名或函数名：ctrl + N/P；</p>
 <p>2、VIM下将自定义的变量类型高亮的方法：</p>
 <p>   vim下定义C语言语法的位置在：/usr/share/vim/vim74/syntax</p>
 <p>   可以在自己的home目录下，创建文件夹和文件：~/.vim/syntax/c.vim；<br>   在该c.vim文件中增加：<br>   syn keyword cType u8 u16 u32 s8 s16 s32 bool_t<br>   (增加一个自定义变量，就在后面追加即可)<br>   注意：直接在~/.vimrc文件中增加“syn …”这句话，不可以;</p>
-<p>3、VIM下的替换操作：<br>a&gt; 文件内全部替换：<br>:%s#abc#def#g（用def替换文件中所有的abc）</p>
-<p>EXP：例如把一个文本文件里面的“linuxidc.com”全部替换成“linuxidc.net”：<br>     :%s#linuxidc.com#xwen.net#g (如文件内有#，可用/替换,比如:%s/linuxidc.com/xwen.net/g)</p>
-<p>b&gt; 文件内局部替换：<br>把10行到50行内的“abc”全部替换成“def”<br>:10,50s#abc#def#g（如文件内有#，可用/替换,:%s/abc/def/g）</p>
-<p>以上命令如果在g后面再加上c，则会在替换之前显示提示符给用户确认（conform）是否需要替换。 比如<br>:%s#linuxidc.com#linuxidc.net#gc</p>
+<p>3、VIM下的替换操作：</p>
+<blockquote>
+<p>文件内全部替换：<br>     :%s#abc#def#g（用def替换文件中所有的abc）</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>EXP：把一个文本文件里面的“linuxidc.com”全部替换成“linuxidc.net”：<br>     :%s#linuxidc.com#xwen.net#g (如文件内有#，可用/替换,比如:%s/linuxidc.com/xwen.net/g)</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>文件内局部替换：</p>
+<blockquote>
+<p> 把10行到50行内的“abc”全部替换成“def”<br> :10,50s#abc#def#g（如文件内有#，可用/替换,:%s/abc/def/g）</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>以上命令如果在g后面再加上c，则会在替换之前显示提示符给用户确认（conform）是否需要替换。 比如<br>  :%s#linuxidc.com#linuxidc.net#gc</p>
+</blockquote>
 
       
     </div>
@@ -382,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/19/gitCommand/" rel="next" title="gitCommand">
-                <i class="fa fa-chevron-left"></i> gitCommand
+              <a href="/2018/04/23/linuxCmd_find/" rel="next" title="linuxCommand -- find">
+                <i class="fa fa-chevron-left"></i> linuxCommand -- find
               </a>
             
           </div>
@@ -392,8 +407,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/23/linuxCmd_find/" rel="prev" title="linuxCommand -- find">
-                linuxCommand -- find <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/24/linuxHeadFile/" rel="prev" title="linux HeadFile">
+                linux HeadFile <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Technical Doc">
 <meta property="og:description" content="参考链接 1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；   参考链接   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致； 2、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T16:11:05.517Z">
+<meta property="og:updated_time" content="2018-09-02T12:29:54.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gdbCommand">
 <meta name="twitter:description" content="参考链接 1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；   参考链接   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致； 2、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个">
@@ -366,7 +366,14 @@
 <p>set  env LD_LIBRARY_PATH<br>show ENV LD_LIBRARY_PATH<br>show environment</p>
 </blockquote>
 <p>8、solib-absolute-prefix和solib-search-path<br>   solib-absolute-prefix设置的是被搜索文件路径的前缀，solib-absolute-prefix的值只能有一个；<br>   solib-search-path设置的是被搜索文件的路径，solib-search-path可以有多个路径，中间按用:隔开；<br>   EXP：<br>   (gdb) info sharedlibrary                    //gdb下查看shared library方法<br>   (gdb) set solib-search-path .               //假设当前目录下有文件libshared.so, 可以执行下面的命令：<br>   (gdb) set solib-absolute-prefix /media/DATA //假设文件libc.so.6在/media/DATA/lib/libc.so.6下，gdb用前缀/media/DATA + /lib/libc.so.6,就找到了文件</p>
-
+<p>9、临时改变变量的值：set i=3</p>
+<p>10、查看类的结构：ptype node</p>
+<p>11、打印其他格式的值：<br>    p/x i    //打印hex<br>    p/c i    //打印字符<br>    p/s i    //打印字符串<br>    p/f i    //打印float</p>
+<p>12、查看当前stack中的变量：info local</p>
+<p>13、保存已设置的断点<br>    &gt; 在gdb中，可以使用如下命令将设置的断点保存下来：<br>    &gt; (gdb) save breakpoints save-file-name</p>
+<pre><code>&gt; 下次调试时，可以使用如下命令批量设置保存的断点：
+&gt; (gdb) source save-file-name
+</code></pre>
       
     </div>
     
