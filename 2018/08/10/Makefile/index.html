@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="参考链接 1参考链接 2 1、Makefie &amp;gt;&amp;amp; log.txt 保存输出信息 2、make -p 列出所有的Makefile内置变量的当前值。   注意：该命令会先执行make。然后再执行-p输出当前Makefile的所有内置变量的值。 3、3个内置函数说明：   A&amp;gt; wildcard : 扩展通配符   B&amp;gt; notdir   ：去除路径   C&amp;gt; pats">
+<meta name="description" content="参考链接 1参考链接 2 #Makefile的基本规则1、makefile的基本规则为：       目标:依赖 2、@放在行首，通常用在“规则”行中，表示不显示命令本身，而只显示它的结果； 3、$@、$^、$&amp;lt;三个符号的含义：  $@：代表目标文件(target)$^：代表所有的依赖文件(components)$&amp;lt;：代表第一个依赖文件(components中最左边的那个)  4、Ma">
 <meta property="og:type" content="article">
 <meta property="og:title" content="makefile">
 <meta property="og:url" content="http://yoursite.com/2018/08/10/Makefile/index.html">
 <meta property="og:site_name" content="Technical Doc">
-<meta property="og:description" content="参考链接 1参考链接 2 1、Makefie &amp;gt;&amp;amp; log.txt 保存输出信息 2、make -p 列出所有的Makefile内置变量的当前值。   注意：该命令会先执行make。然后再执行-p输出当前Makefile的所有内置变量的值。 3、3个内置函数说明：   A&amp;gt; wildcard : 扩展通配符   B&amp;gt; notdir   ：去除路径   C&amp;gt; pats">
+<meta property="og:description" content="参考链接 1参考链接 2 #Makefile的基本规则1、makefile的基本规则为：       目标:依赖 2、@放在行首，通常用在“规则”行中，表示不显示命令本身，而只显示它的结果； 3、$@、$^、$&amp;lt;三个符号的含义：  $@：代表目标文件(target)$^：代表所有的依赖文件(components)$&amp;lt;：代表第一个依赖文件(components中最左边的那个)  4、Ma">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T16:11:05.513Z">
+<meta property="og:updated_time" content="2018-12-05T14:06:34.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="makefile">
-<meta name="twitter:description" content="参考链接 1参考链接 2 1、Makefie &amp;gt;&amp;amp; log.txt 保存输出信息 2、make -p 列出所有的Makefile内置变量的当前值。   注意：该命令会先执行make。然后再执行-p输出当前Makefile的所有内置变量的值。 3、3个内置函数说明：   A&amp;gt; wildcard : 扩展通配符   B&amp;gt; notdir   ：去除路径   C&amp;gt; pats">
+<meta name="twitter:description" content="参考链接 1参考链接 2 #Makefile的基本规则1、makefile的基本规则为：       目标:依赖 2、@放在行首，通常用在“规则”行中，表示不显示命令本身，而只显示它的结果； 3、$@、$^、$&amp;lt;三个符号的含义：  $@：代表目标文件(target)$^：代表所有的依赖文件(components)$&amp;lt;：代表第一个依赖文件(components中最左边的那个)  4、Ma">
 
 
 
@@ -350,9 +350,22 @@
 
       
         <p><a href="https://blog.csdn.net/ruglcc/article/details/7814546/" target="_blank" rel="noopener">参考链接 1</a><br><a href="https://blog.csdn.net/stpeace/article/details/53054006" target="_blank" rel="noopener">参考链接 2</a></p>
-<p>1、Makefie &gt;&amp; log.txt 保存输出信息</p>
-<p>2、make -p 列出所有的Makefile内置变量的当前值。<br>   注意：该命令会先执行make。然后再执行-p输出当前Makefile的所有内置变量的值。</p>
-<p>3、3个内置函数说明：<br>   A&gt; wildcard : 扩展通配符<br>   B&gt; notdir   ：去除路径<br>   C&gt; patsubst ：替换通配符</p>
+<p>#Makefile的基本规则<br>1、makefile的基本规则为：<br>       目标:依赖</p>
+<p>2、@放在行首，通常用在“规则”行中，表示不显示命令本身，而只显示它的结果；</p>
+<p>3、$@、$^、$&lt;三个符号的含义：</p>
+<blockquote>
+<p>$@：代表目标文件(target)<br>$^：代表所有的依赖文件(components)<br>$&lt;：代表第一个依赖文件(components中最左边的那个)</p>
+</blockquote>
+<p>4、Makefile中执行shell命令的方法<br>   举例说明：A_VAR = $(shell uname –nodename)</p>
+<p>5、makefile里的替换引用规则，即用你指定的变量替换另一个变量，格式是：<br>   $(var:a=b) 或 ${var:a=b}<br>   它的含义是把变量var中的每一个值结尾用b替换掉a。</p>
+<p>6、makefile的自动推导<br>   makefile可以自动推导文件以及文件依赖关系后面的命令，于是我们就没必要去在每一个[.o]文件后都写上类似的命令，<br>   因为，我们的make会自动识别，并自己推导命令。</p>
+<p>   只要make看到一个[.o]文件，它就会自动的把[.c]文件加在依赖关系中。<br>   如果make找到一个whatever.o，那么whatever.c，就会是whatever.o的依赖文件。并且 cc -c whatever.c 也会被推导出来。</p>
+<p>7、产生镜像文件<br>   基本的实现方法是：注意Wl逗号后面跟着需要传递的参数，逗号后面不能存在空格，否则出现错误。<br>   gcc -Wl,-Map=file.map file.c -o target</p>
+<p>#Makefile的内置变量<br>1、MakeFile常见预定义变量<br>   AR       ：库文件维护程序的名称，默认值为ar<br>   AS       ：汇编程序的名称，默认值为as<br>   CC       ：C编译器名称，默认值为cc<br>   CPP      ：C预编译器的名称，默认值为$(CC) -E<br>   CXX      : C++编译器名称，默认值为g++<br>   RM       ：文件删除程序的名称，默认值为rm -f<br>   ARFLAGS  ：库文件维护程序的选项，无默认值<br>   ASFLAGS  ：汇编程序的选项，无默认值<br>   CFLAGS   ：C编译器的选项，无默认值<br>   CPPFLAGS ：C预编译器的选项，无默认值<br>   CXXFLAGS ：C++编译器的选项，无默认值</p>
+<p>2、内置变量$(MAKE) 就是预设的 make，用于make这个命令的名称(或者路径)<br>   通过make -p可以查到 MAKE = $(MAKE_COMMAND), 而MAKE_COMMAND := make</p>
+<p>3、CFLAGS是makefile中的隐式规则里会用到的常见预定义变量，是C编译器的选项。<br>   注意是隐式规则！！编译时会自动加上，相当于：<br>   gcc -c a.c -o a.o，相当于<br>   gcc $(CFLAGS) -c a.c -o a.o</p>
+<p>#Makefile的内置函数</p>
+<p>1、3个内置函数说明：<br>   A&gt; wildcard : 扩展通配符<br>   B&gt; notdir   ：去除路径<br>   C&gt; patsubst ：替换通配符</p>
 <p>   EXP：在test下，建立a.c和b.c2个文件，在sub目录下，建立sa.c和sb.c2 个文件，<br>        建立一个简单的Makefile<br>           src=$(wildcard <em>.c ./sub/</em>.c)<br>           dir=$(notdir $(src))<br>           obj=$(patsubst %.c,%.o,$(dir) )</p>
 <pre><code>       all:
           @echo $(src)
@@ -363,17 +376,16 @@
           第一行输出：a.c b.c ./sub/sa.c ./sub/sb.c。wildcard把 指定目录 ./ 和 ./sub/ 下的所有后缀是c的文件全部展开。
           第二行输出：a.c b.c sa.c sb.c。notdir把展开的文件去除掉路径信息
           第三行输出：a.o b.o sa.o sb.o。patsubst把$(dir)中的变量符合后缀是.c的全部替换成.o，或者使用obj=$(dir:%.c=%.o)效果也是一样的。
-</code></pre><p>4、makefile里的替换引用规则，即用您指定的变量替换另一个变量，格式是：<br>   $(var:a=b) 或 ${var:a=b}<br>   它的含义是把变量var中的每一个值结尾用b替换掉a。</p>
-<p>5、内置变量$(MAKE) 就是预设的 make，用于make这个命令的名称(或者路径)<br>   通过make -p可以查到 MAKE = $(MAKE_COMMAND), 而MAKE_COMMAND := make</p>
-<p>6、makefile的自动推导<br>   makefile可以自动推导文件以及文件依赖关系后面的命令，于是我们就没必要去在每一个[.o]文件后都写上类似的命令，<br>   因为，我们的make会自动识别，并自己推导命令。</p>
-<p>   只要make看到一个[.o]文件，它就会自动的把[.c]文件加在依赖关系中。<br>   如果make找到一个whatever.o，那么whatever.c，就会是whatever.o的依赖文件。并且 cc -c whatever.c 也会被推导出来。</p>
-<p>7、CFLAGS是makefile中的隐式规则里会用到的常见预定义变量，是C编译器的选项。<br>   注意是隐式规则！！编译时会自动加上，相当于：<br>   gcc -c a.c -o a.o，相当于<br>   gcc $(CFLAGS) -c a.c -o a.o</p>
-<p>8、MakeFile常见预定义变量<br>   AR：库文件维护程序的名称，默认值为ar<br>   AS：汇编程序的名称，默认值为as<br>   CC：C编译器名称，默认值为cc<br>   CPP：C预编译器的名称，默认值为$(CC) -E<br>   CXX: C++编译器名称，默认值为g++<br>   RM：文件删除程序的名称，默认值为rm -f<br>   ARFLAGS：库文件维护程序的选项，无默认值<br>   ASFLAGS：汇编程序的选项，无默认值<br>   CFLAGS：C编译器的选项，无默认值<br>   CPPFLAGS：C预编译器的选项，无默认值<br>   CXXFLAGS：C++编译器的选项，无默认值</p>
-<p>9、在Makefile文件中打印字符串的方法</p>
+</code></pre><p>2、Makefile查找变量中的字符串，可以使用findstring，filter函数，具体用法：<br>   查找变量A_VAR中是否存在子串abc：<br>   $(findstring abc, $(A_VAR))<br>   注意：子串abc不要加单引号’’或双引号””；<br>   <a href="https://blog.csdn.net/u013925378/article/details/51263239" target="_blank" rel="noopener">参见链接</a></p>
+<p>#Makefile的调试方式</p>
+<p><a href="https://www.cnblogs.com/AP0904225/p/5936465.html" target="_blank" rel="noopener">介绍makefile调试的文章</a></p>
+<p>1、Makefie &gt;&amp; log.txt 保存输出信息</p>
+<p>2、make -p 列出所有的Makefile内置变量的当前值。<br>   注意：该命令会先执行make。然后再执行-p输出当前Makefile的所有内置变量的值。</p>
+<p>3、在Makefile文件中打印字符串的方法</p>
 <blockquote>
 <p>有两类命令可以打印字符串：</p>
 <blockquote>
-<p>第一类：</p>
+<p>第一类，info/warning/error是关键字：</p>
 <blockquote>
 <p>$(info $(TARGET_DEVICE))<br>$(warning “here add the debug info”)<br>$(error “error: this will stop the compile”) //error会停止当前makefile的编译</p>
 </blockquote>
@@ -383,15 +395,8 @@
 &gt;&gt;&gt; @echo &quot;The compiler name is \&quot;${Name}\&quot;;&quot;
 &gt;&gt;&gt; @echo $(Name)
 </code></pre><blockquote>
-<p>以上命两类命令的前面需要有TAB键；<br>第二类命令需要放置在“目标:依赖”下，才能被执行；第一类不需要；</p>
+<p>以上两类命令的前面是否需要有TAB键？要根据情况尝试；<br>第二类命令需要放置在“目标:依赖”下，才能被执行；第一类不需要；</p>
 </blockquote>
-<p>10、@放在行首，通常用在“规则”行中，表示不显示命令本身，而只显示它的结果；</p>
-<p>11、$@、$^、$&lt;三个符号的含义：</p>
-<blockquote>
-<p>$@：代表目标文件(target)<br>$^：代表所有的依赖文件(components)<br>$&lt;：代表第一个依赖文件(components中最左边的那个)</p>
-</blockquote>
-<p>   makefile的基本规则为：<br>       目标:依赖</p>
-<p>12、产生镜像文件<br>   基本的实现方法是：注意Wl逗号后面跟着需要传递的参数，逗号后面不能存在空格，否则出现错误。<br>   gcc -Wl,-Map=file.map file.c -o target</p>
 
       
     </div>
@@ -492,7 +497,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -503,7 +508,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Technical Doc">
 <meta property="og:description" content="参考链接 1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；   参考链接   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致； 2、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-02T12:29:54.270Z">
+<meta property="og:updated_time" content="2018-12-05T14:06:34.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gdbCommand">
 <meta name="twitter:description" content="参考链接 1、gdb启动时，相当于启动一个新的shell，会再次加载~目录下.bashrc/.cshrc.user文件；   参考链接   之前遇到的问题便由此造成，需要将所有的设置均写入.bashrc/.cshrc.user文件中，以确保terminal和gdb的运行环境一致； 2、gdb中attach的方法   1&amp;gt; 执行“ps -ef | grep 进程名”获取当前进程的PID(第二个">
@@ -368,12 +368,22 @@
 <p>8、solib-absolute-prefix和solib-search-path<br>   solib-absolute-prefix设置的是被搜索文件路径的前缀，solib-absolute-prefix的值只能有一个；<br>   solib-search-path设置的是被搜索文件的路径，solib-search-path可以有多个路径，中间按用:隔开；<br>   EXP：<br>   (gdb) info sharedlibrary                    //gdb下查看shared library方法<br>   (gdb) set solib-search-path .               //假设当前目录下有文件libshared.so, 可以执行下面的命令：<br>   (gdb) set solib-absolute-prefix /media/DATA //假设文件libc.so.6在/media/DATA/lib/libc.so.6下，gdb用前缀/media/DATA + /lib/libc.so.6,就找到了文件</p>
 <p>9、临时改变变量的值：set i=3</p>
 <p>10、查看类的结构：ptype node</p>
-<p>11、打印其他格式的值：<br>    p/x i    //打印hex<br>    p/c i    //打印字符<br>    p/s i    //打印字符串<br>    p/f i    //打印float</p>
+<p>11、打印其他格式的值：<br>    p/x i    //打印hex<br>    p/u i    //打印16进制无符号<br>    p/d i    //打印十进制<br>    p/t i    //打印二进制<br>    p/c i    //打印字符<br>    p/s i    //打印字符串<br>    p/f i    //打印float</p>
 <p>12、查看当前stack中的变量：info local</p>
 <p>13、保存已设置的断点<br>    &gt; 在gdb中，可以使用如下命令将设置的断点保存下来：<br>    &gt; (gdb) save breakpoints save-file-name</p>
 <pre><code>&gt; 下次调试时，可以使用如下命令批量设置保存的断点：
 &gt; (gdb) source save-file-name
-</code></pre>
+</code></pre><p>14、设置基于循环次数的断点<br>    &gt; set $cnt=0<br>    &gt; b xxx.c:123 if ++$cnt==20</p>
+<p>15、gdb启动<br>    &gt; gdb xxx.exe<br>    &gt; gdb<br>      file xxx.exe –&gt; for location dbg<br>      load xxx.exe –&gt; for remote dbg</p>
+<p>17、run的方法<br>    &gt; run parameter1 parameter2 …<br>    &gt; set args parameter1 parameter2 …<br>      show args<br>      run</p>
+<p>18、ignore 断点编号 忽略次数</p>
+<p>19、catch event<br>    当事件event发生的时候，程序停止运行；<br>    catch event只设置一次捕捉点，当程序停住以后，被自动删除；<br>    event列表：<br>             throw  C++抛出异常<br>             catch  C++捕捉到异常<br>              exec  exec被调用<br>              fork  fork被调用<br>             vfork  vfork被调用<br>      load libname  加载名为libname库(HP-UX可用)<br>    unload libname  卸载名为libname库(HP-UX可用)</p>
+<p>20、print<br>    &gt; pt 按结构体格式打印结构体值<br>    &gt; 打印数组值：<br>      p/t <em>array@30      :按二进制打印array的前30个数<br>      p/t </em>(array+10)@30 :按二进制打印从array第10个数起的30个数</p>
+<p>21、examine查看内存<br>    命令格式: x/[option] addr<br>              option: n，表示内存的长度。<br>                      f，表示显示个格式(可以参照之前格式化输出部分)<br>                  u，默认是4个字节；也可以是b 单字节，h 双字节，w四字节，g 八字节<br>              addr：内存地址，也是即将要取值的起始地址。<br>    默认x addr</p>
+<p>22、函数访问<br>    &gt; 调用<br>      call和print可以调用被测程序中的函数<br>      exp：call tempFunc(2，2)<br>    &gt; 返回<br>      finish：连续运行当前函数直到返回为止，然后停下来等待命令。<br>      return：使用return命令取消当前函数的执行，并立即返回</p>
+<p>23、堆栈<br>    &gt; frame args<br>      移动到args指定的栈帧中去，并打印选中的栈的信息。args可以时帧编号或者时帧的地址。如果没有args，则打印当前帧的信息;<br>    &gt; select-frame args<br>      移动到指定的帧中去，不打印信息;<br>    &gt; frame 打印当前栈帧的简要信息。<br>    &gt; 在栈帧之间切换，up n或者down n，n默认为1；</p>
+<p>24、gdb中加载脚本<br>    &gt; 在启动gdb的时候，会在当前目录下查找“.gdbinit”这个文件，并把它的内容作为gdb命令行解释，所以我们可以把脚本命名为“.gdbinit”，这样在启动的时候就会处理这些命令；<br>    &gt; gdb运行期间，可以使用source script-file来解释gdb命令脚本；</p>
+
       
     </div>
     
@@ -473,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -484,7 +494,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

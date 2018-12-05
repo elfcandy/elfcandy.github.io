@@ -262,6 +262,295 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/09/ComputeArch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/09/ComputeArch/" itemprop="url">ComputeArch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-09T14:38:17+08:00">
+                2018-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Compute-Archtecture/" itemprop="url" rel="index">
+                    <span itemprop="name">Compute Archtecture</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>单功能流水线和多功能流水线;静态流水线和动态流水线；标量流水处理器和向量流水处理器；线性流水线和非线性流水线</p>
+<p>“指令级并行 ILP”的含义是：如果程序中相邻的一组指令是相互独立的，即不竞争同一个功能部件、不相互等待对方的运算结果、不访问同一个存储单元，那么它们就可以在处理器内部并行地执行。</p>
+<p>超标量（Superscalar）技术 和 超长指令字（Very Long Instruction Word, VLIW）技术是目前最基本的两类指令级并行技术。<br>前者的特点是采用普通的指令，设置多条并行工作的指令流水线；<br>后者的特点是：将若干条普通指令组装在一起，形成一条“超级指令”。这条“超级指令”包含多个不同操作码，这些操作码分别处理不同的操作数。对应这些操作码，一一对应地设置相应的功能部件。这样，只要取指令一次、分析指令一次，VLIW 技术就可以实现对多个不同的操作数，同时进行不同的处理/计算。</p>
+<p>Intel 公司的 Pentium 微处理器的实现采用了超标量技术，设置了两条相同的整数流水线（分别叫 U 流水线和 V 流水线）和一条浮点数流水线。浮点数流水线中又进一步采用多功能部件的思想，设置了加法器、乘法器和除法器。<br>目前，主流的微处理器都采用了超标量技术。</p>
+<p>1、标量处理器是一种最简单的计算机处理器类型。这类处理器在同一时间内只处理一条数据（整数或浮点数）。标量处理器是一种单指令流单数据流（SISD）处理器。</p>
+<p>2、超标量（superscalar）试图在一个周期取出多条指令并行执行，是通过内置多条流水线来同时执行多个处理，其实质是以空间换取时间。<br>早期的单发射结构微处理器的流水线设计目标是做到每个周期能平均执行一条指令 ,但这一目标不能满足处理器性能增长的要求,为了提高处理器的性能, 要求处理器具有每个周期能发射执行多条指令的能力 . 与超长指令字( VLIW , Very Long Instruction Word) 结构的数字信号处理器相似 ,超标量结构的处理器每个时钟周期也并行发射和执行多条指令 . 区别在于 ,VLIW的处理器采用静态调度, 而超标量结构的处理器采用动态指令调度 ,在指令执行时根据资源 、数据相关等情况 ,决定是否并行执行指令. 超标量结构是当代多发射微处理器所广泛采用的微体系结构 [1]<br>在超标量微处理器中 ,每个周期可同时发射执行多条指令, 但指令的高发射频率也意味着相关 [2]  所发生的频率也很高 ; 而且其结构决定了相关的复杂性 . 因此 ,相关的检测和解决策略的优劣将直接影响超标量处理器的性能 . 为了有效地处理相关, 需采用静态和动态调度技术相结合的方法 . 静态调度可在编译过程中减少相关的产生; 而动态调度可根据处理器的动态信息,发掘出更多的 ILP . 动态调度简化了编译器的设计 ,减小了编译代码对硬件的依赖, 但却是以大量的硬件开销为代价的.<br>在超标量处理器中, 指令的发射策略是指在指令的发射过程中, 所采取的相关检测方法和相关处理措施, 决定指令队列中指令的发射顺序, 其算法效率的优劣将直接影响超标量处理器的性能 . 设计高效的指令发射策略是实现高性能超标量处理器的前提. 在超标量处理器中 ,由于指令乱序执行 ,判断指令执行结束的条件更为复杂 , 因此设计超标量处理器时 ,应考虑采取一定的措施以实现精确中断</p>
+<p>RISC 芯片中通常集成了较多的功能部件，利用强大的编译系统使多个功能部件并行执行，并采用流水线 (pipeline) 、指令乱序 (out-order) 等设计使 CPU 的性能得以充分发挥。目前 RISC 芯片是高性能计算机的主流芯片。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/20/C/" itemprop="url">C</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T20:12:01+08:00">
+                2018-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、printf的输出格式：<br>   指针型：%p<br>   输出16进制数带0x前缀：%#x</p>
+<p>2、C语言中定义了3个层次的作用域，即文件(编译单元)、函数和复合语句<br>   复合语句(compound statement)简称为语句块<br>   它使用大括号把许多语句和声明组合到一起，形成单条语句。<br>   EXP：<br>       { [声明和语句的列表] }</p>
+<p>   语句块与简单的语句不同，语句块不用分号当作结尾。<br>   在语句块内声明的变量将具有语句块作用域。换句话说，这些名称只有自声明点开始，一直到语句块结尾之前有效。</p>
+<p>3、关于char *字符串的说明：<br>   char *s1=”hello”;//声明一个指针指向常量”hello”<br>   char s2[]=”hello”;//在栈中开辟一个数组字符”hello”;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/24/linuxHeadFile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -356,6 +645,163 @@
             <p>1、linux的系统头文件所在位置：<br>   echo ‘main(){}’|gcc -E -v -</p>
 <p>2、stdint.h 说明：<br>   <a href="https://blog.csdn.net/yucan1001/article/details/7470905" target="_blank" rel="noopener">参考连接</a></p>
 <p>3、libcstl介绍：<br>   libcstl是一个应用于C语言编程的函数库，它将编程过程中经常使用的数据结构如向量、链表、集合、树等封装成相应的数据结构并提供一系列的操作函数来操作保存在这些数据结构中的数据，同时它还将常用的算法如排序、查找、划分等封装成相应的算法函数并提供迭代器来使两者之间建立联系方便使用。从libcstl的名字就可以看出它于STL有一定的关系，是的libcstl的接口和实现都是模仿了STL。<br>   <a href="https://blog.csdn.net/swgsunhj/article/details/38553747" target="_blank" rel="noopener">参考链接</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/linuxCmd_find/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="elfcandy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Technical Doc">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/linuxCmd_find/" itemprop="url">linuxCommand -- find</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
+                    <span itemprop="name">LinuxCommand</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、which命令是在PATH变量指定的路径中搜索指定的系统命令的位置；</p>
+<p>2、whereis命令只能用于搜索二进制文件(-b)、源代码文件(-s)、说明文件(-m)。如果省略参数则返回所有的信息；</p>
+<p>3、find是最常用也是最强大的查找命令，它可以查找任何类型的文件。</p>
+<p>   find命令的一般格式为：find &lt;指定目录&gt;&lt;指定条件&gt;&lt;指定动作&gt;，即find pathname -options [-print -exec -ok]</p>
+<p>   EXP: find &lt;路径&gt; &lt;选项&gt; &lt;文件名&gt;</p>
+<p>参数解释：</p>
+<p>pathname：pathname为搜索的目录及其子目录，默认情况下为当前目录</p>
+<p>常用的option选项：</p>
+<p>   -name：按文件名来查找文件<br>   -iname: 不区分大小写</p>
+<p>   -user：按照文件的属主来查找文件</p>
+<p>   -group：按照文件所属的组来查找文件</p>
+<p>   -perm：按照文件权限来查找文件</p>
+<p>   -prune：不在当前指定目录中查找</p>
+<p>4、locate命令实际是”find -name”的另一种写法，但是查找方式跟find不同，它比find快得多。</p>
+<p>   因为它不搜索具体目录，而是在一个数据库(/var/lib/locatedb)中搜索指定的文件。</p>
+<p>   此数据库含有本地文件的所有信息，此数据库是linux系统自动创建的，数据库由updatedb程序来更新，</p>
+<p>   updatedb是由cron daemon周期性建立的，默认情况下为每天更新一次，所以用locate命令你搜索不到最新更新的文件，</p>
+<p>   除非你在用locate命令查找文件之前手动的用updatedb命令更新数据库。</p>
 
           
         
@@ -519,163 +965,6 @@
 <blockquote>
 <p>以上命令如果在g后面再加上c，则会在替换之前显示提示符给用户确认（conform）是否需要替换。 比如<br>  :%s#linuxidc.com#linuxidc.net#gc</p>
 </blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/linuxCmd_find/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="elfcandy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Technical Doc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/23/linuxCmd_find/" itemprop="url">linuxCommand -- find</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T10:42:42+08:00">
-                2018-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LinuxCommand/" itemprop="url" rel="index">
-                    <span itemprop="name">LinuxCommand</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、which命令是在PATH变量指定的路径中搜索指定的系统命令的位置；</p>
-<p>2、whereis命令只能用于搜索二进制文件(-b)、源代码文件(-s)、说明文件(-m)。如果省略参数则返回所有的信息；</p>
-<p>3、find是最常用也是最强大的查找命令，它可以查找任何类型的文件。</p>
-<p>   find命令的一般格式为：find &lt;指定目录&gt;&lt;指定条件&gt;&lt;指定动作&gt;，即find pathname -options [-print -exec -ok]</p>
-<p>   EXP: find &lt;路径&gt; &lt;选项&gt; &lt;文件名&gt;</p>
-<p>参数解释：</p>
-<p>pathname：pathname为搜索的目录及其子目录，默认情况下为当前目录</p>
-<p>常用的option选项：</p>
-<p>   -name：按文件名来查找文件<br>   -iname: 不区分大小写</p>
-<p>   -user：按照文件的属主来查找文件</p>
-<p>   -group：按照文件所属的组来查找文件</p>
-<p>   -perm：按照文件权限来查找文件</p>
-<p>   -prune：不在当前指定目录中查找</p>
-<p>4、locate命令实际是”find -name”的另一种写法，但是查找方式跟find不同，它比find快得多。</p>
-<p>   因为它不搜索具体目录，而是在一个数据库(/var/lib/locatedb)中搜索指定的文件。</p>
-<p>   此数据库含有本地文件的所有信息，此数据库是linux系统自动创建的，数据库由updatedb程序来更新，</p>
-<p>   updatedb是由cron daemon周期性建立的，默认情况下为每天更新一次，所以用locate命令你搜索不到最新更新的文件，</p>
-<p>   除非你在用locate命令查找文件之前手动的用updatedb命令更新数据库。</p>
 
           
         
@@ -977,12 +1266,22 @@
 <p>8、solib-absolute-prefix和solib-search-path<br>   solib-absolute-prefix设置的是被搜索文件路径的前缀，solib-absolute-prefix的值只能有一个；<br>   solib-search-path设置的是被搜索文件的路径，solib-search-path可以有多个路径，中间按用:隔开；<br>   EXP：<br>   (gdb) info sharedlibrary                    //gdb下查看shared library方法<br>   (gdb) set solib-search-path .               //假设当前目录下有文件libshared.so, 可以执行下面的命令：<br>   (gdb) set solib-absolute-prefix /media/DATA //假设文件libc.so.6在/media/DATA/lib/libc.so.6下，gdb用前缀/media/DATA + /lib/libc.so.6,就找到了文件</p>
 <p>9、临时改变变量的值：set i=3</p>
 <p>10、查看类的结构：ptype node</p>
-<p>11、打印其他格式的值：<br>    p/x i    //打印hex<br>    p/c i    //打印字符<br>    p/s i    //打印字符串<br>    p/f i    //打印float</p>
+<p>11、打印其他格式的值：<br>    p/x i    //打印hex<br>    p/u i    //打印16进制无符号<br>    p/d i    //打印十进制<br>    p/t i    //打印二进制<br>    p/c i    //打印字符<br>    p/s i    //打印字符串<br>    p/f i    //打印float</p>
 <p>12、查看当前stack中的变量：info local</p>
 <p>13、保存已设置的断点<br>    &gt; 在gdb中，可以使用如下命令将设置的断点保存下来：<br>    &gt; (gdb) save breakpoints save-file-name</p>
 <pre><code>&gt; 下次调试时，可以使用如下命令批量设置保存的断点：
 &gt; (gdb) source save-file-name
-</code></pre>
+</code></pre><p>14、设置基于循环次数的断点<br>    &gt; set $cnt=0<br>    &gt; b xxx.c:123 if ++$cnt==20</p>
+<p>15、gdb启动<br>    &gt; gdb xxx.exe<br>    &gt; gdb<br>      file xxx.exe –&gt; for location dbg<br>      load xxx.exe –&gt; for remote dbg</p>
+<p>17、run的方法<br>    &gt; run parameter1 parameter2 …<br>    &gt; set args parameter1 parameter2 …<br>      show args<br>      run</p>
+<p>18、ignore 断点编号 忽略次数</p>
+<p>19、catch event<br>    当事件event发生的时候，程序停止运行；<br>    catch event只设置一次捕捉点，当程序停住以后，被自动删除；<br>    event列表：<br>             throw  C++抛出异常<br>             catch  C++捕捉到异常<br>              exec  exec被调用<br>              fork  fork被调用<br>             vfork  vfork被调用<br>      load libname  加载名为libname库(HP-UX可用)<br>    unload libname  卸载名为libname库(HP-UX可用)</p>
+<p>20、print<br>    &gt; pt 按结构体格式打印结构体值<br>    &gt; 打印数组值：<br>      p/t <em>array@30      :按二进制打印array的前30个数<br>      p/t </em>(array+10)@30 :按二进制打印从array第10个数起的30个数</p>
+<p>21、examine查看内存<br>    命令格式: x/[option] addr<br>              option: n，表示内存的长度。<br>                      f，表示显示个格式(可以参照之前格式化输出部分)<br>                  u，默认是4个字节；也可以是b 单字节，h 双字节，w四字节，g 八字节<br>              addr：内存地址，也是即将要取值的起始地址。<br>    默认x addr</p>
+<p>22、函数访问<br>    &gt; 调用<br>      call和print可以调用被测程序中的函数<br>      exp：call tempFunc(2，2)<br>    &gt; 返回<br>      finish：连续运行当前函数直到返回为止，然后停下来等待命令。<br>      return：使用return命令取消当前函数的执行，并立即返回</p>
+<p>23、堆栈<br>    &gt; frame args<br>      移动到args指定的栈帧中去，并打印选中的栈的信息。args可以时帧编号或者时帧的地址。如果没有args，则打印当前帧的信息;<br>    &gt; select-frame args<br>      移动到指定的帧中去，不打印信息;<br>    &gt; frame 打印当前栈帧的简要信息。<br>    &gt; 在栈帧之间切换，up n或者down n，n默认为1；</p>
+<p>24、gdb中加载脚本<br>    &gt; 在启动gdb的时候，会在当前目录下查找“.gdbinit”这个文件，并把它的内容作为gdb命令行解释，所以我们可以把脚本命名为“.gdbinit”，这样在启动的时候就会处理这些命令；<br>    &gt; gdb运行期间，可以使用source script-file来解释gdb命令脚本；</p>
+
           
         
       
@@ -1483,139 +1782,11 @@ C&gt; 生成的new page，需要将theme/next/_config.yml中的category项目中
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="elfcandy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Technical Doc">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/26/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T16:11:17+08:00">
-                2018-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1661,7 +1832,7 @@ C&gt; 生成的new page，需要将theme/next/_config.yml中的category项目中
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1672,7 +1843,7 @@ C&gt; 生成的new page，需要将theme/next/_config.yml中的category项目中
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

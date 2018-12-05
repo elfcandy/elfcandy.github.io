@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Technical Doc">
 <meta property="og:description" content="Shell 知识点汇总： 1&amp;gt; Shell脚本的第一句话，是注释，被称为释伴(shebang)行，用于说明Bash的类型   EXP：#!/bin/bash/ 2&amp;gt; 默认登陆shell   /bin/bash是默认登陆shell，在创建用户时分配；使用chsh命令可以改变默认的shell。   chsh &amp;lt;用户名&amp;gt; -s &amp;lt;新shell&amp;gt;   EXP：chsh">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T16:11:05.536Z">
+<meta property="og:updated_time" content="2018-12-05T14:06:34.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shellScript">
 <meta name="twitter:description" content="Shell 知识点汇总： 1&amp;gt; Shell脚本的第一句话，是注释，被称为释伴(shebang)行，用于说明Bash的类型   EXP：#!/bin/bash/ 2&amp;gt; 默认登陆shell   /bin/bash是默认登陆shell，在创建用户时分配；使用chsh命令可以改变默认的shell。   chsh &amp;lt;用户名&amp;gt; -s &amp;lt;新shell&amp;gt;   EXP：chsh">
@@ -378,6 +378,9 @@
 <p>   #!/bin/bash<br>   echo ‘Please enter your name’<br>   read name<br>   echo “The name is $name”</p>
 <p>   #./test.sh<br>   Please enter your name<br>   Bob<br>   The name is Bob</p>
 <p>12&gt; shell中基本函数的定义，两种：<br>   1) function关键字 + 函数名<br>      function name {<br>         commands<br>      }<br>   2) 函数名+空括号<br>      name() {<br>         commands<br>      }<br>   3) 调用方式：使用函数名即可</p>
+<p>13&gt; 一种在一个脚本同时在bash和csh上运行的方法(sed分支和预测，shell的内建和外部命令)：<br>   1) 第一种实现方式：<br>      $(echo “$SHELL” | sed ‘{<br>      s/\/bin\/bash/export/<br>      t<br>      s/\/bin\/tcsh/setenv/<br>      }’) LD_LIBRARY_PATH=$PWD/third-party/Tcl/x86_64/lib/:$LD_LIBRARY_PATH</p>
+<p>   2) 第二种实现方式：<br>      echo $SHELL | sed ‘s/\/bin\/bash/export LD_LIBRARY_PATH=$PWD\/third-party\/:$LD_LIBRARY_PATH/;t;s/\/bin\/tcsh/setenv LD_LIBRARY_PATH $PWD\/third-party\/:$LD_LIBRARY_PATH/‘&gt;tmp.sh</p>
+<p>   3) 第三种实现方式：<br>      <code>echo $SHELL | sed &#39;s/\/bin\/bash/export LD_LIBRARY_PATH=$PWD\/third-party\/:$LD_LIBRARY_PATH/;t;s/\/bin\/tcsh/ls -al/&#39;</code><br>      这种方式下，setenv命令不能正常执行，ls命令可以。</p>
 
       
     </div>
@@ -478,7 +481,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -489,7 +492,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/TechDocContext/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
